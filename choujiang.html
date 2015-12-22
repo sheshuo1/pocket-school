@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"/>
+    <title>积分抽奖</title>
+    <script src="js/jquery-1.10.1.js"></script>
+    <script src="js/jQueryRotate.2.2.js"></script>
+    <script src="js/jquery.easing.min.js"></script>
+    <style type="text/css">
+        * {
+            font-family: 'Microsoft YaHei', sans-serif;
+        }
+
+        body {
+            background: rgb(218, 224, 214);
+            position: relative;
+        }
+
+        .zhuanpan {
+            width: 90%;
+            margin: 10% auto;
+            position: relative;
+        }
+
+        .rotate-con-pan {
+            /*background: url(images/disk.jpg) no-repeat 0 0;*/
+            /*background-size: 100% 100%;*/
+            position: relative;
+            /*width: 480px;*/
+            /*height: 480px;*/
+            width: 100%;
+            display: block;
+            box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            -webkit-box-sizing: border-box;
+        }
+
+        .zhizhen {
+            position: absolute;
+            width: 30%;
+            left: 35%;
+            top: 23%;
+        }
+
+        .rotate-con-zhen {
+
+            width: 100%;
+        }
+
+        .xiaofengche {
+            color: red;
+            font-family: 'Microsoft YaHei', sans-serif;
+            letter-spacing: 0.3rem;
+            display: inline-block;
+            line-height: 2rem;
+            margin-top: 5%;
+            margin-left: 5%;
+        }
+
+        .choujiangjilu {
+            float: right;
+            color: white;
+            font-size: 1rem;
+            letter-spacing: 0.2rem;
+            font-family: 'Microsoft YaHei', sans-serif;
+            padding: 5px 8px;
+            background: rgb(255, 105, 106);
+            border: solid 1px red;
+            border-radius: 50px;
+            margin-top: 5%;
+            margin-right: 5%;
+        }
+
+        .tixing {
+            color: white;
+            background: #BCDDA4;
+            display: block;
+            width: 280px;
+            border: solid 1px #5CDD76;
+            border-radius: 50px;
+            font-size: 1rem;
+            letter-spacing: 0.2rem;
+            font-family: 'Microsoft YaHei', sans-serif;
+            padding: 5px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .tixing span {
+            color: red;
+        }
+
+        .jilu {
+            border: 8px #FF8471 solid;
+            border-radius: 20px;
+            width: 90%;
+            position: absolute;
+            top: 0;
+            margin: 5% 3%;
+            background: rgb(253, 253, 243);
+            text-align: center;
+            display: none;
+        }
+
+        .jilu h1 {
+            font-size: 1.5rem;
+            font-family: 'Microsoft YaHei', sans-serif;
+        }
+
+        .jilu-header {
+            font-family: 'Microsoft YaHei', sans-serif;
+            line-height: 2rem;
+            background: red;
+            margin: 0 5%;
+            border-radius: 8px;
+            color: white;
+        }
+
+        .jilu-header div {
+            display: inline-block;
+        }
+
+        .jilu-header span {
+            display: inline-block;
+            background: white;
+            line-height: 1.5rem;
+            color: #40CFFF;
+            margin: 2px 5px;
+            font-weight: 700;
+            padding: 0 5px;
+            border-radius: 5px;
+        }
+
+        .jilutable {
+            margin: 5% auto;
+            width: 80%;
+            border-collapse: collapse;
+            font-family: 'Microsoft YaHei', sans-serif;
+            table-layout: fixed;
+        }
+
+        .jilutable th {
+            color: red;
+        }
+
+        .jilutable tr {
+            border-bottom: 1px solid #FFD195;
+
+        }
+
+        .jilutable tr img {
+            height: 90%;
+        }
+
+        .jilutable td {
+            height: 2rem;
+            vertical-align: middle;
+            font-weight: 700;
+        }
+
+        .jilu p {
+            color: red;
+            text-align: left;
+            padding: 0 5%;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0 0;
+        }
+
+        li {
+            display: inline-block;
+            width: 30%;
+            box-sizing: border-box;
+        }
+
+        .switchpage {
+            padding: 5px 0;
+            border-radius: 15px;
+            background: red;
+            margin: 0 10px;
+            color: white;
+        }
+
+        .close {
+            color: white;
+            font-size: 1.2rem;
+            background: rgb(18, 190, 226);
+            border-radius: 20px;
+            border: 2px solid #2373CC;
+            padding: 5px 40px;
+            margin-bottom: 10%;
+        }
+    </style>
+</head>
+<body>
+<div class="xiaofengche"><b>小风车剩余：<span class="fengche-number">310</span></b></div>
+<button class="choujiangjilu"><b>抽奖记录</b></button>
+<div class="zhuanpan">
+    <img class="rotate-con-pan" src="images/disk.jpg" alt="disk"/>
+
+    <div class="zhizhen"><img class="rotate-con-zhen" src="images/start.png" alt="start"/></div>
+</div>
+<div class="tixing"><b>每次抽奖仅消耗<span class="redword">10风车</span>哦</b></div>
+
+<div class="jilu">
+    <h1>抽奖记录</h1>
+
+    <div class="jilu-header">
+        <div>总下注积分<span>130</span></div>
+        <div>总中奖积分<span>160</span></div>
+    </div>
+    <table class="jilutable">
+        <tr>
+            <th>投注</th>
+            <th>中奖</th>
+            <th>时间</th>
+        </tr>
+        <tr>
+            <td>10</td>
+            <td>30</td>
+            <td>21：21</td>
+        </tr>
+        <tr>
+            <td>10</td>
+            <td><img src="images/no-price.jpg" alt=""/></td>
+            <td>9-30</td>
+        </tr>
+        <tr>
+            <td>10</td>
+            <td>30</td>
+            <td>10-12</td>
+        </tr>
+        <tr>
+            <td>10</td>
+            <td><img src="images/no-price.jpg" alt=""/></td>
+            <td>4-16</td>
+        </tr>
+        <tr>
+            <td>10</td>
+            <td>30</td>
+            <td>8-9</td>
+        </tr>
+        <tr>
+            <td>10</td>
+            <td><img src="images/no-price.jpg" alt=""/></td>
+            <td>12-7</td>
+        </tr>
+
+
+    </table>
+    <p>可查询三个月内的抽奖记录</p>
+    <ul>
+        <li>
+            <div class="switchpage">上一页</div>
+        </li>
+        <li>
+            <div>1/2</div>
+        </li>
+        <li>
+            <div class="switchpage">下一页</div>
+        </li>
+    </ul>
+    <button class="close">关 闭</button>
+</div>
+<script type="text/javascript">
+    /*   $(function () {
+     $(".rotate-con-zhen").rotate({
+     bind: {
+     click: function () {
+     var a = runzp();
+     $(this).rotate({
+     duration: 3000,               //转动时间
+     angle: 0,                    //起始角度
+     animateTo: 1440 + a.angle,      //结束的角度
+     easing: $.easing.easeOutSine,//动画效果，需加载jquery.easing.min.js
+     callback: function () {
+     alert(a.prize + a.message);//简单的弹出获奖信息
+     }
+     });
+     }
+     }
+     });
+     });
+     */
+    $(function () {
+        $('.choujiangjilu').click(function () {
+            $('.jilu').fadeIn();
+        });//点击“抽奖记录”，显示纪录div
+        $('.close').click(function () {
+            $('.jilu').fadeOut();
+        });//点击“关闭”，隐藏纪录div
+        //转盘旋转程序，传入参数为json字符串
+        function start(a) {
+            //先解析json字符串
+            var aa = JSON.parse(a);
+            //调用jquery插件rotate
+            $(".rotate-con-zhen").rotate({
+                duration: 3000,               //转动时间
+                angle: 0,                    //起始角度
+                animateTo: 1440 + aa.angle,      //结束的角度
+                easing: $.easing.easeOutExpo,//动画效果，需加载jquery.easing.min.js
+                callback: function () {
+                    alert(aa.message);       //简单的弹出获奖信息
+                }
+            });
+        }
+
+
+        var jon = '{"angle":180,"message":"恭喜获奖！"}';
+        $(".rotate-con-zhen").click(function () {
+            start(jon);
+        });
+    });
+
+</script>
+</body>
+</html>

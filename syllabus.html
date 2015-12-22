@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"/>
+    <title>课程表</title>
+    <style>
+        * {
+            margin: 0 0;
+            padding: 0 0;
+            font-family: 'Microsoft YaHei', sans-serif;
+        }
+        a{
+            text-decoration: none;
+        }
+        html {
+            font-size: 14px;
+        }
+
+        body {
+            background: #c4e5b7;
+            padding:2%;
+        }
+        .main {
+            box-sizing: border-box;
+            width: 100%;
+            padding: 3%;
+            border: 3px dotted darkgreen;
+            border-radius: 20px;
+        }
+        .main table{
+            border-collapse:collapse;
+            width: 100%;
+            background: white;
+            text-align: center;
+        }
+        th,td{
+            border: solid 2px darkgreen;
+            padding:5% 0;
+            font-weight: 700;
+        }
+        .date{
+            color: brown;
+        }
+        .xingqi{
+            color: #2175b5;
+        }
+        .shangwurow{
+            color: #ff9000;
+        }
+        .shangwu{
+            color: #9a007b;
+        }
+        .xiawurow{
+            color: #ff2659;
+        }
+        .xiawu{
+            color: #c44500;
+        }
+        .today{
+            background: orange;
+            color: darkgreen;
+        }
+    </style>
+</head>
+<body>
+<div class="main">
+    <table>
+        <thead>
+        <tr>
+            <th class="date">8<br>月<br>23<br>日</th>
+            <th class="xingqi xingqiyi">星<br>期<br>一</th>
+            <th class="xingqi xingqier">星<br>期<br>二</th>
+            <th class="xingqi xingqisan">星<br>期<br>三</th>
+            <th class="xingqi xingqisi">星<br>期<br>四</th>
+            <th class="xingqi xingqiwu">星<br>期<br>五</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr class="shangwurow">
+            <th rowspan="4" class="shangwu">上<br>午</th>
+            <td class="xingqiyi">数<br>学</td>
+            <td class="xingqier">语<br>文</td>
+            <td class="xingqisan">数<br>学</td>
+            <td class="xingqisi">英<br>语</td>
+            <td class="xingqiwu">语<br>文</td>
+        </tr>
+        <tr class="shangwurow">
+            <td class="xingqiyi">数<br>学</td>
+            <td class="xingqier">英<br>语</td>
+            <td class="xingqisan">音<br>乐</td>
+            <td class="xingqisi">班<br>会</td>
+            <td class="xingqiwu">语<br>文</td>
+        </tr>
+        <tr class="shangwurow">
+            <td class="xingqiyi">化<br>学</td>
+            <td class="xingqier">物<br>理</td>
+            <td class="xingqisan">生<br>物</td>
+            <td class="xingqisi">语<br>文</td>
+            <td class="xingqiwu">数<br>学</td>
+        </tr>
+        <tr class="shangwurow">
+            <td class="xingqiyi">体<br>育</td>
+            <td class="xingqier">音<br>乐</td>
+            <td class="xingqisan">化<br>学</td>
+            <td class="xingqisi">生<br>物</td>
+            <td class="xingqiwu">班<br>会</td>
+        </tr>
+        <tr class="xiawurow">
+            <th rowspan="2" class="xiawu" >下<br>午</th>
+            <td class="xingqiyi">仔<br>细</td>
+            <td class="xingqier">数<br>学</td>
+            <td class="xingqisan">语<br>文</td>
+            <td class="xingqisi">体<br>育</td>
+            <td class="xingqiwu">音<br>乐</td>
+        </tr>
+        <tr class="xiawurow">
+            <td class="xingqiyi">语<br>文</td>
+            <td class="xingqier">英<br>语</td>
+            <td class="xingqisan">数<br>学</td>
+            <td class="xingqisi">语<br>文</td>
+            <td class="xingqiwu">体<br>育</td>
+        </tr>
+        </tbody>
+    </table>
+<script src="js/jquery-1.10.1.js"></script>
+<script>
+    $(function(){
+        $('.xingqiyi').attr("class","today");
+    });
+</script>
+</div>
+
+
+</body>
+</html>
