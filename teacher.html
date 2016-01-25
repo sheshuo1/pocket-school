@@ -26,16 +26,18 @@
         .main {
             padding: 5% 2%;
         }
-
         .content {
             box-sizing: border-box;
-            width: 33.333%;
+            width: 33.3333%;
+            padding: 3% 5%;
             float: left;
-            padding: 2% 5%;
             color: darkgreen;
+            vertical-align: text-bottom;
         }
-
-        .touxiang {
+        .img{
+            overflow: hidden;
+        }
+        .touxiang{
             width: 100%;
         }
 
@@ -58,72 +60,97 @@
     <img src="images/teacher_02.png" alt="header"/>
 </div>
 <div class="main">
+
     <a href="teacher-info.html">
         <div class="content">
-            <img class="touxiang" src="images/teacher-pic_05.png" alt="touxiang"/>
+
+            <div class="img">
+                <img class="touxiang" src="images/teacher-pic_05.png" alt="touxiang"/>
+            </div>
+
 
             <p><span class="kecheng">语文</span>&nbsp;<b><span class="name">吉春芽</span></b></p>
         </div>
     </a>
     <a href="teacher-info.html">
         <div class="content">
-            <img class="touxiang" src="images/teacher-pic_05.png" alt="touxiang"/>
+
+            <div class="img">
+                <img class="touxiang" src="images/teacher-pic_05.png" alt="touxiang"/>
+            </div>
 
             <p><span class="kecheng">语文</span>&nbsp;<b><span class="name">吉春芽</span></b></p>
         </div>
     </a>
     <a href="teacher-info.html">
         <div class="content">
-            <img class="touxiang" src="images/teacher-pic_05.png" alt="touxiang"/>
+
+            <div class="img">
+                <img class="touxiang" src="images/teacher-pic_05.png" alt="touxiang"/>
+            </div>
 
             <p><span class="kecheng">语文</span>&nbsp;<b><span class="name">吉春芽</span></b></p>
         </div>
     </a>
     <a href="teacher-info.html">
         <div class="content">
-            <img class="touxiang" src="images/teacher-pic_05.png" alt="touxiang"/>
+            <div class="img">
+                <img class="touxiang" src="images/teacher-pic_05.png" alt="touxiang"/>
+            </div>
 
             <p><span class="kecheng">语文</span>&nbsp;<b><span class="name">吉春芽</span></b></p>
         </div>
     </a>
     <a href="teacher-info.html">
         <div class="content">
-            <img class="touxiang" src="images/teacher-pic_05.png" alt="touxiang"/>
+            <div class="img">
+                <img class="touxiang" src="images/teacher-pic_05.png" alt="touxiang"/>
+            </div>
 
             <p><span class="kecheng">语文</span>&nbsp;<b><span class="name">吉春芽</span></b></p>
         </div>
     </a>
     <a href="teacher-info.html">
         <div class="content">
-            <img class="touxiang" src="images/teacher-pic_05.png" alt="touxiang"/>
+            <div class="img">
+                <img class="touxiang" src="images/teacher-pic_05.png" alt="touxiang"/>
+            </div>
 
             <p><span class="kecheng">语文</span>&nbsp;<b><span class="name">吉春芽</span></b></p>
         </div>
     </a>
     <a href="teacher-info.html">
         <div class="content">
-            <img class="touxiang" src="images/teacher-pic_05.png" alt="touxiang"/>
+            <div class="img">
+                <img class="touxiang" src="images/teacher-pic_05.png" alt="touxiang"/>
+            </div>
 
             <p><span class="kecheng">语文</span>&nbsp;<b><span class="name">吉春芽</span></b></p>
         </div>
     </a>
     <a href="teacher-info.html">
         <div class="content">
-            <img class="touxiang" src="images/teacher-pic_05.png" alt="touxiang"/>
+            <div class="img">
+                <img class="touxiang" src="images/teacher-pic_05.png" alt="touxiang"/>
+            </div>
 
             <p><span class="kecheng">语文</span>&nbsp;<b><span class="name">吉春芽</span></b></p>
         </div>
     </a>
     <a href="teacher-info.html">
         <div class="content">
-            <img class="touxiang" src="images/teacher-pic_05.png" alt="touxiang"/>
+            <div class="img">
+                <img class="touxiang" src="images/teacher-pic_05.png" alt="touxiang"/>
+            </div>
 
             <p><span class="kecheng">语文</span>&nbsp;<b><span class="name">吉春芽</span></b></p>
         </div>
     </a>
     <a href="teacher-info.html">
         <div class="content">
-            <img class="touxiang" src="images/teacher-pic_05.png" alt="touxiang"/>
+            <div class="img">
+                <img class="touxiang" src="images/teacher-pic_05.png" alt="touxiang"/>
+            </div>
 
             <p><span class="kecheng">语文</span>&nbsp;<b><span class="name">吉春芽</span></b></p>
         </div>
@@ -131,5 +158,12 @@
 
 
 </div>
+<script src="js/jquery-1.10.1.js"></script>
+<script>
+    $(function() {
+        var imgWidth = $('.img').eq(0).width();
+        $('.img').height(imgWidth*1.33333);
+    });
+</script>
 </body>
 </html>

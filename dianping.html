@@ -41,6 +41,7 @@
         .main table input[type="checkbox"]{
             vertical-align: middle;
             height: 100%;
+            zoom:150%;
         }
         .main table .pingjia{
             width: 50%;
@@ -50,6 +51,10 @@
         }
         .main table .gaijin{
             width: 30%;
+        }
+        .zongjie{
+            height: 5rem;
+            width:99%;
         }
         .submit{
             display: block;
@@ -69,7 +74,6 @@
         <tr>
             <th class="xuexi">学习</th>
             <th class="pingjia">评价</th>
-            <th class="gaijin">改进</th>
         </tr>
         </thead>
         <tbody>
@@ -80,9 +84,6 @@
                     <label>一般</label><input type="checkbox" name="chk_1" value="normal"/>
                     <label>再努力</label><input type="checkbox" name="chk_1" value="bad"/>
                 </td>
-                <td>
-                    <input type="text" name="gaijin1"/>
-                </td>
             </tr>
             <tr>
                 <th>完成作业</th>
@@ -90,9 +91,6 @@
                     <label>好</label><input type="checkbox" name="chk_2" value="good"/>
                     <label>一般</label><input type="checkbox" name="chk_2" value="normal"/>
                     <label>再努力</label><input type="checkbox" name="chk_2" value="bad"/>
-                </td>
-                <td>
-                    <input type="text" name="gaijin2"/>
                 </td>
             </tr>
             <tr>
@@ -102,13 +100,9 @@
                     <label>一般</label><input type="checkbox" name="chk_3" value="normal"/>
                     <label>再努力</label><input type="checkbox" name="chk_3" value="bad"/>
                 </td>
-                <td>
-                    <input type="text" name="gaijin3"/>
-                </td>
             </tr>
             <tr>
                 <th>纪律</th>
-                <td></td>
                 <td></td>
             </tr>
             <tr>
@@ -118,9 +112,6 @@
                     <label>一般</label><input type="checkbox" name="chk_4" value="normal"/>
                     <label>再努力</label><input type="checkbox" name="chk_4" value="bad"/>
                 </td>
-                <td>
-                    <input type="text" name="gaijin4"/>
-                </td>
             </tr>
             <tr>
                 <th>课上守纪</th>
@@ -128,9 +119,6 @@
                     <label>好</label><input type="checkbox" name="chk_5" value="good"/>
                     <label>一般</label><input type="checkbox" name="chk_5" value="normal"/>
                     <label>再努力</label><input type="checkbox" name="chk_5" value="bad"/>
-                </td>
-                <td>
-                    <input type="text" name="gaijin5"/>
                 </td>
             </tr>
             <tr>
@@ -140,13 +128,9 @@
                     <label>一般</label><input type="checkbox" name="chk_6" value="normal"/>
                     <label>再努力</label><input type="checkbox" name="chk_6" value="bad"/>
                 </td>
-                <td>
-                    <input type="text" name="gaijin6"/>
-                </td>
             </tr>
             <tr>
                 <th>生活</th>
-                <td></td>
                 <td></td>
             </tr>
             <tr>
@@ -156,30 +140,23 @@
                     <label>一般</label><input type="checkbox" name="chk_7" value="normal"/>
                     <label>再努力</label><input type="checkbox" name="chk_7" value="bad"/>
                 </td>
-                <td>
-                    <input type="text" name="gaijin7"/>
-                </td>
             </tr>
             <tr>
                 <th>班级值日</th>
                 <td>
-                    <label>好</label><input type="checkbox" name="chk_8" value="good"/>
+                    <label>好</label><input type="checkbox" name="chk_8" value="good" />
                     <label>一般</label><input type="checkbox" name="chk_8" value="normal"/>
                     <label>再努力</label><input type="checkbox" name="chk_8" value="bad"/>
-                </td>
-                <td>
-                    <input type="text" name="gaijin8"/>
                 </td>
             </tr>
             <tr>
                 <th>教师总结</th>
-                <td colspan="2">
-                    <input type="text" name="zongjie" />
+                <td>
+                    <textarea class="zongjie"></textarea>
                 </td>
             </tr>
         </tbody>
     </table>
-    <button class="submit" id="submit">提交</button>
 </div>
 <script src="js/jquery-1.10.1.js"></script>
 <script>

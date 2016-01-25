@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"/>
+    <title>教师版功能</title>
+    <style>
+        * {
+            margin: 0 0;
+            padding: 0 0;
+            font-family: 'Microsoft YaHei', sans-serif;
+            outline: none;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        html {
+            font-size: 14px;
+        }
+
+        body {
+            background: #d9f2df url("images/background.jpg") no-repeat;
+            background-size: 100% 100%;
+            padding: 2%;
+            min-height: 90vh;
+        }
+        .header{
+            padding:2% 2%;
+        }
+        .header .btn{
+            padding:5px 10px;
+            background: #379357;
+            border: 1px solid lawngreen;
+            color: white;
+            font-size: 1.4rem;
+            display: block;
+            margin:15% auto;
+            width: 50%;
+        }
+
+
+        .btn-cancel,.btn-submit{
+            display: inline-block;
+            margin:5px 15%;
+            font-size: 1.4rem;
+            width: 50px;
+            height: 50px;
+            border-radius: 25px;
+            border: 2px solid greenyellow;
+            color: white;
+        }
+        .btn-submit{
+            float: right;
+            background: #009944;
+        }
+
+        .btn-cancel{
+            float: left;
+            background: #df1b49;
+        }
+        .classwork{
+            width: 90vw;
+            position: absolute;
+            top:5%;
+            left:5%;
+            background: #c7e4ce;
+            border: 2px solid #215533;
+            border-radius: 20px;
+            overflow: hidden;
+            display: none;
+        }
+        .classwork .title{
+            background: #379357;
+            line-height: 2;
+            text-align: center;
+        }
+        .classwork .text{
+            display: block;
+            margin:20px auto;
+            height: 300px;
+            width: 80%;
+
+        }
+        .submit-footer{
+
+            width: 100%;
+        }
+
+        .hide{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+<div class="header">
+    <button class="btn btn-work">布置作业</button>
+    <a href="qiandao-for-teacher.html"><button class="btn btn-qiandao">签到管理</button></a>
+    <a href="dianping-for-teacher.html"><button class="btn btn-dianping">课堂点评</button></a>
+</div>
+
+<div class="classwork">
+    <h2 class="title">作业布置</h2>
+    <textarea class="text"></textarea>
+    <div class="submit-footer">
+
+        <button class="btn-cancel btn-work-cancel">取消</button>
+
+        <button class="btn-submit">提交</button>
+
+    </div>
+</div>
+<script src="js/jquery-1.10.1.js"></script>
+<script>
+    $(function () {
+
+        //点击布置作业，显示布置作业
+        $('.btn-work').click(function(){
+            $('.classwork').show('slow');
+            $('.header').hide();
+        });
+
+        //点击取消，隐藏作业
+        $('.btn-work-cancel').click(function(){
+            $('.classwork').hide('slow');
+            $('.classwork .text').val('');
+            $('.header').show('slow');
+        });
+
+    });
+</script>
+</body>
+</html>

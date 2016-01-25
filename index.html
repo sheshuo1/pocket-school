@@ -1,23 +1,79 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"/>
     <title></title>
     <link rel="stylesheet" href="css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="slick/slick.css">
+    <link rel="stylesheet" href="slick/slick-theme.css">
     <script src="js/jquery-1.10.1.js"></script>
     <script src="js/bootstrap.min.js"></script>
+    <script src="slick/slick.js"></script>
     <style>
-        .main {
+    	*{
+    		outline: none;
+    	}
+        .main{
             width: 50%;
             margin: 50px auto;
         }
         button{
             margin:5%;
         }
+        #container {
+            width: 50%;
+            position: relative;
+            background-color: red;
+            overflow: hidden;  //需要触发BFC消除margin折叠的问题
+        }
+        .placeholder:after {
+            content: '';
+            display: block;
+            margin-top: 100%; //margin 百分比相对父元素宽度计算
+        }
+        .vw{
+            background: red;
+            width: 50vw;
+            height: 50vh;
+        }
+        *::selection{
+            background: red;
+        }
+        p {
+            animation-duration: 3s;
+            animation-name: slidein;
+        }
+
+        @keyframes slidein {
+            from {
+                margin-left: 100%;
+                width: 300%;
+            }
+
+            to {
+                margin-left: 0%;
+                width: 100%;
+            }
+        }
+
+        input[type="text"]{
+            float: right;
+            width: 100px;
+            border-radius:50px;
+            outline: none;
+            border: 1px solid #ccc;
+            padding: 5px;
+            transition: width 1s;
+        }
+        input[type="text"]:focus{
+            width: 200px;
+        }
     </style>
 </head>
-<body>
+<body onload="draw()">
+<p>这是一个测试问负担</p>
+<hr>
 <div class="main">
     <p>导航</p>
     <a href="teacher.html">
@@ -50,7 +106,35 @@
     <a href="qiandao.html">
         <button class="btn btn-default">qiandao</button>
     </a>
+    <a href="nutrition-school.html">
+        <button class="btn btn-default">nutrition-school</button>
+    </a>
+    <a href="letter.html">
+        <button class="btn btn-default">letter</button>
+    </a>
+    <a href="letter-content.html">
+        <button class="btn btn-default">letter-content</button>
+    </a>
+    <a href="connection.html">
+        <button class="btn btn-default">connection</button>
+    </a>
+    <a href="flex-test.html">
+        <button class="btn btn-default">flex-test</button>
+    </a>
+    <a href="syllabus-for-teacher.html">
+        <button class="btn btn-default">syllabus-for-teacher</button>
+    </a>
+    <a href="teacher-edition.html">
+        <button class="btn btn-default">teacher-edition</button>
+    </a>
+    <a href="qiandao-for-teacher.html">
+        <button class="btn btn-default">qiandao-for-teacher</button>
+    </a>
+    <a href="dianping-for-teacher.html">
+        <button class="btn btn-default">dianping-for-teacher</button>
+    </a>
 </div>
+<hr>
 <div class="main">
     <br/>
     <ul class="nav nav-pills">
@@ -60,7 +144,106 @@
         <li><a href="#">客服</a></li>
         <li><a href="#">帮助</a></li>
     </ul>
-
 </div>
+<hr>
+<form action="#">
+    <input type="text" pattern="[A-Z]{3}" title="">
+    <input type="datetime-local" name="date" value="" title="">
+    <input type="submit">
+</form>
+
+<br><br>
+<div class="vw"></div>
+<!--<div class="placeholder" id="container"></div>-->
+<!--<canvas id="ctx" width="600px" height="700px"></canvas>-->
+
+<input type="file" id="file"><input type="button" value="上传文件" onclick="file()">
+<br>
+<br>
+<br>
+<br>
+<div class="transtion"></div>
+<br><br><br><br>
+<style>
+    .transtion{
+        width: 50%;
+        padding-top:50%;
+        position: relative;
+        left:0;
+        background: blue;
+        transition: width 2s,height 2s,left 2s;
+    }
+    .transtion:active{
+        width: 100px;
+        height: 100px;
+        left:100%;
+    }
+    .slick img{
+        width: 100%;
+    }
+</style>
+<br>
+<br><br>
+<div class="slick">
+    <div><img src="images/111.jpg" alt=""><p>这是第一张图片</p></div>
+    <div><img src="images/222.jpg" alt=""><p>这是第二张图片</p></div>
+    <div><img src="images/333.jpg" alt=""><p>这是第三张图片</p></div>
+    <div><img src="images/444.jpg" alt=""><p>这是第四张图片</p></div>
+</div>
+<br><br><br>
+<!--<video autoplay="autoplay" controls="controls" id="html5-player-video" onclick="playVideo('1.mp4');" poster="video/placeholder.jpg" preload="" src="1.mp4" width="100%" x-webkit-airplay="allow">-->
+<!--抱歉！您的手机不支持播放网页视频！-->
+<!--</video>-->
+<!--<video src="1.mp4" autoplay="autoplay" controls="controls" width="100%">抱歉！您的手机不支持播放网页视频！</video>-->
+<!--<video autoplay="autoplay" controls="controls" width="100%"><source src="1.mp4">抱歉！您的手机不支持播放网页视频！</video>-->
+<!--<button class="fullscreen">全屏</button>-->
+<!--<script src="js/jquery-1.10.1.js"></script>-->
+<!--<script>-->
+    <!--//调用手机自带播放器播放视频-->
+    <!--function playVideo(video){-->
+        <!--window.JSInterface.startVideo(video);-->
+    <!--}-->
+    <!--$(function(){-->
+        <!--var video = $('video');-->
+        <!--$('.fullscreen').on('click', function() {-->
+            <!--//For Webkit-->
+            <!--video[0].webkitEnterFullscreen();-->
+
+            <!--//For Firefox-->
+            <!--video[0].mozRequestFullScreen();-->
+
+            <!--return false;-->
+        <!--});-->
+    <!--});-->
+<!--</script>-->
+<script>
+    function draw(){
+        var canvas = document.getElementById("ctx");
+        if(canvas==null){
+            return false;
+        }
+        var ctx= canvas.getContext("2d");
+        ctx.beginPath();
+        ctx.moveTo(125,125);
+        ctx.lineTo(125,45);
+        ctx.lineTo(45,125);
+        ctx.closePath();
+        ctx.stroke();
+    }
+    function file(){
+        var file=document.querySelectorAll('#file')[0];
+        console.log(file.files[0]);
+    }
+    $(function(){
+        $('.slick').slick({
+            dots: true,
+            speed: 500,
+            autoplay:true,
+            autoplaySpeed:3000,
+            arrows:false,
+            cssEase:'linear'
+        });
+    });
+</script>
 </body>
 </html>

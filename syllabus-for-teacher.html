@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"/>
+<title>课程表教师版</title>
+<style>
+    * {
+        margin: 0 0;
+        padding: 0 0;
+        font-family: 'Microsoft YaHei', sans-serif;
+        outline: none;
+    }
+
+    a {
+        text-decoration: none;
+    }
+
+    html {
+        font-size: 14px;
+    }
+
+    body {
+        background: #d9f2df url("images/background.jpg") no-repeat;
+        background-size: 100% 100%;
+        padding: 2%;
+    }
+
+    .header {
+        width: 100%;
+        text-align: center;
+        margin: 0 auto 10px auto;
+    }
+
+    .header td {
+        border: none;
+    }
+    .header .qiandao {
+        width: 60px;
+        height: 60px;
+        background: red;
+        border: solid 2px #C6CC28;
+        border-radius: 30px;
+        font-size: 1.6rem;
+        color: white;
+    }
+
+    .main {
+        box-sizing: border-box;
+        width: 100%;
+        padding: 3%;
+        border: 3px dotted darkgreen;
+        border-radius: 20px;
+    }
+
+    .main table {
+        border-collapse: collapse;
+        width: 100%;
+        background: white;
+        text-align: center;
+    }
+
+    .main table th, .main table td {
+        border: solid 2px darkgreen;
+        padding: 2% 0;
+        font-weight: 700;
+    }
+
+    .main table .date {
+        color: brown;
+    }
+
+    .main table .xingqi {
+        color: #2175b5;
+    }
+
+    .main table .shangwurow {
+        color: #ff9000;
+    }
+
+    .main table .shangwu {
+        color: #9a007b;
+    }
+
+    .main table .xiawurow {
+        color: #ff2659;
+    }
+
+    .main table .xiawu {
+        color: #c44500;
+    }
+
+    .main table .zhongwurow {
+        color: #0053c4;
+    }
+
+    .main table .today {
+        background: orange;
+        color: darkgreen;
+    }
+</style>
+</head>
+<body>
+<div class="syllabus">
+    <header>
+        <table class="header">
+            <tr>
+                <td>
+                    <!--<button class="zuoye">今日作业</button>-->
+                </td>
+                <td>
+                    <a href="teacher-edition.html"><button class="qiandao">教师</button></a>
+                </td>
+                <td>
+                    <!--<button class="dianping">课堂点评</button>-->
+                </td>
+            </tr>
+        </table>
+    </header>
+    <div class="main">
+        <table>
+            <thead>
+            <tr>
+                <th class="date">8<br>月<br>23<br>日</th>
+                <th class="xingqi xingqiyi">星<br>期<br>一</th>
+                <th class="xingqi xingqier">星<br>期<br>二</th>
+                <th class="xingqi xingqisan">星<br>期<br>三</th>
+                <th class="xingqi xingqisi">星<br>期<br>四</th>
+                <th class="xingqi xingqiwu">星<br>期<br>五</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr class="shangwurow">
+                <th rowspan="4" class="shangwu">上<br>午</th>
+                <td class="xingqiyi">数学</td>
+                <td class="xingqier">语文</td>
+                <td class="xingqisan">数学</td>
+                <td class="xingqisi">英语</td>
+                <td class="xingqiwu">语文</td>
+            </tr>
+            <tr class="shangwurow">
+                <td class="xingqiyi">数学</td>
+                <td class="xingqier">英语</td>
+                <td class="xingqisan">音乐</td>
+                <td class="xingqisi">班会</td>
+                <td class="xingqiwu">语文</td>
+            </tr>
+            <tr class="shangwurow">
+                <td class="xingqiyi">化学</td>
+                <td class="xingqier">物理</td>
+                <td class="xingqisan">生物</td>
+                <td class="xingqisi">语文</td>
+                <td class="xingqiwu">数学</td>
+            </tr>
+            <tr class="shangwurow">
+                <td class="xingqiyi">体育</td>
+                <td class="xingqier">音乐</td>
+                <td class="xingqisan">化学</td>
+                <td class="xingqisi">生物</td>
+                <td class="xingqiwu">班会</td>
+            </tr>
+
+            <tr class="zhongwurow">
+                <th class="zhongwu">中<br>午</th>
+                <td class="xingqiyi"></td>
+                <td class="xingqier"></td>
+                <td class="xingqisan"></td>
+                <td class="xingqisi"></td>
+                <td class="xingqiwu"></td>
+            </tr>
+            <tr class="xiawurow">
+                <th rowspan="2" class="xiawu">下<br>午</th>
+                <td class="xingqiyi">自习</td>
+                <td class="xingqier">数学</td>
+                <td class="xingqisan">语文</td>
+                <td class="xingqisi">体育</td>
+                <td class="xingqiwu">音乐</td>
+            </tr>
+            <tr class="xiawurow">
+                <td class="xingqiyi">语文</td>
+                <td class="xingqier">英语</td>
+                <td class="xingqisan">数学</td>
+                <td class="xingqisi">语文</td>
+                <td class="xingqiwu">体育</td>
+            </tr>
+
+
+            </tbody>
+        </table>
+
+    </div>
+</div>
+<script src="js/jquery-1.10.1.js"></script>
+<script>
+    $(function () {
+        //设置当天课程表高亮
+        $('.xingqiyi').attr("class", "today");
+
+    });
+</script>
+</body>
+</html>
