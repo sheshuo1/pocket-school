@@ -41,8 +41,8 @@
             background: red;
         }
         p {
-            animation-duration: 3s;
-            animation-name: slidein;
+            /*animation-duration: 3s;
+            animation-name: slidein;*/
         }
 
         @keyframes slidein {
@@ -197,6 +197,10 @@
     <div><img src="images/444.jpg" alt=""><p>这是第四张图片</p></div>
 </div>
 <br><br><br>
+<button class="btn-php">加载</button>
+<span class="php"></span>
+
+<button onclick="test1()"><a href="https://itunes.apple.com/cn/app/id477927812">test</a></button>
 <!--<video autoplay="autoplay" controls="controls" id="html5-player-video" onclick="playVideo('1.mp4');" poster="video/placeholder.jpg" preload="" src="1.mp4" width="100%" x-webkit-airplay="allow">-->
 <!--抱歉！您的手机不支持播放网页视频！-->
 <!--</video>-->
@@ -249,7 +253,49 @@
             arrows:false,
             cssEase:'linear'
         });
+        $('.btn-php').on('click',function(){
+            $.post('test.php',function(data){
+                $('.php').text(data);
+            });
+        });
     });
+
+
+    function test(){
+        try {
+//            if (typeof (eval(window.myApp.open)) == 'function') {
+//                window.myApp.open('<%=appUserName %>', '<%=appPwd %>')
+//            } else {
+//                window.location.href('myapp://wentizhongxin.app/openwith');
+//            }
+            window.location.href = 'myapp://wentizhongxin.app/openwith';
+        } catch (e) {
+//            window.location.href = 'myapp://wentizhongxin.app/openwith';
+            alert('savasd');
+        }
+
+    }
+
+//点击html连接打开本地app， webview打开下载页面
+    function test1(){
+
+// 否则打开a标签的href链接
+
+        var ifr = document.createElement( 'iframe' );
+
+        ifr.src = 'myapp://wentizhongxin.app/openwith' ;
+
+        ifr.style.display = 'none' ;
+
+        document.body.appendChild(ifr);
+
+        window.setTimeout( function (){
+
+            document.body.removeChild(ifr);
+
+        },3000)
+
+    }
 </script>
 </body>
 </html>
