@@ -10,26 +10,23 @@
     <style type="text/css">
         * {
             font-family: 'Microsoft YaHei', sans-serif;
+            -webkit-outline:0;
+            outline:0;
         }
-
+        html{
+            background: rgb(218, 224, 214);
+        }
         body {
             background: rgb(218, 224, 214);
             position: relative;
         }
-
         .zhuanpan {
             width: 90%;
+            padding-top:90%;
             margin: 10% auto;
             position: relative;
-        }
-
-        .rotate-con-pan {
-            /*background: url(images/disk.jpg) no-repeat 0 0;*/
-            /*background-size: 100% 100%;*/
-            position: relative;
-            /*width: 480px;*/
-            /*height: 480px;*/
-            width: 100%;
+            background: url(images/disk.jpg) no-repeat 0 0;
+            background-size: 100% 100%;
             display: block;
             box-sizing: border-box;
             -moz-box-sizing: border-box;
@@ -49,17 +46,15 @@
         }
 
         .xiaofengche {
+            clear: both;
             color: red;
             font-family: 'Microsoft YaHei', sans-serif;
             letter-spacing: 0.3rem;
-            display: inline-block;
             line-height: 2rem;
-            margin-top: 5%;
-            margin-left: 5%;
+            margin-left: 2%;
         }
+        .btn{
 
-        .choujiangjilu {
-            float: right;
             color: white;
             font-size: 1rem;
             letter-spacing: 0.2rem;
@@ -68,8 +63,15 @@
             background: rgb(255, 105, 106);
             border: solid 1px red;
             border-radius: 50px;
-            margin-top: 5%;
-            margin-right: 5%;
+            margin:2%;
+        }
+        .choujiangjilu {
+            float: right;
+        }
+
+        .shuoming {
+            float: left;
+
         }
 
         .tixing {
@@ -91,7 +93,7 @@
             color: red;
         }
 
-        .jilu {
+        .div {
             border: 8px #FF8471 solid;
             border-radius: 20px;
             width: 90%;
@@ -103,7 +105,7 @@
             display: none;
         }
 
-        .jilu h1 {
+        .div h1 {
             font-size: 1.5rem;
             font-family: 'Microsoft YaHei', sans-serif;
         }
@@ -158,11 +160,14 @@
             vertical-align: middle;
             font-weight: 700;
         }
-
-        .jilu p {
+        .div .title{
+            color: blue;
+        }
+        .div p {
             color: red;
             text-align: left;
-            padding: 0 5%;
+            padding: 0 10%;
+            line-height: 1.5;
         }
 
         ul {
@@ -196,16 +201,18 @@
     </style>
 </head>
 <body>
-<div class="xiaofengche"><b>小风车剩余：<span class="fengche-number">310</span></b></div>
-<button class="choujiangjilu"><b>抽奖记录</b></button>
+
+<button class="btn choujiangjilu"><b>抽奖记录</b></button>
+<button class="btn shuoming"><b>抽奖说明</b></button>
+<div class="xiaofengche"><b>积分剩余：<span class="fengche-number">310</span></b></div>
 <div class="zhuanpan">
-    <img class="rotate-con-pan" src="images/disk.jpg" alt="disk"/>
+    <!--<img class="rotate-con-pan" src="images/disk.jpg" alt="disk"/>-->
 
     <div class="zhizhen"><img class="rotate-con-zhen" src="images/start.png" alt="start"/></div>
 </div>
-<div class="tixing"><b>每次抽奖仅消耗<span class="redword">10风车</span>哦</b></div>
+<div class="tixing"><b>每次抽奖仅消耗<span class="redword">10积分</span>哦</b></div>
 
-<div class="jilu">
+<div class="div jilu">
     <h1>抽奖记录</h1>
 
     <div class="jilu-header">
@@ -263,7 +270,19 @@
             <div class="switchpage">下一页</div>
         </li>
     </ul>
-    <button class="close">关 闭</button>
+    <button class="close close-jilu">关 闭</button>
+</div>
+
+<div class="div shuomingdiv">
+    <h1>抽奖说明</h1>
+    <span class="title">每签到一次，奖励1积分</span>
+    <p>一等奖：苹果笔记本一台</p>
+    <p>二等奖：苹果iphone6S一部</p>
+    <p>三等奖：小米4S一部</p>
+    <p>四等奖：卫生纸一卷</p>
+    <p>五等奖：矿泉水一瓶</p>
+    <p>安慰奖：无</p>
+    <button class="close close-shuoming">关 闭</button>
 </div>
 <script type="text/javascript">
     /*   $(function () {
@@ -289,8 +308,14 @@
         $('.choujiangjilu').click(function () {
             $('.jilu').fadeIn();
         });//点击“抽奖记录”，显示纪录div
-        $('.close').click(function () {
+        $('.close-jilu').click(function () {
             $('.jilu').fadeOut();
+        });//点击“关闭”，隐藏纪录div
+        $('.shuoming').click(function () {
+            $('.shuomingdiv').fadeIn();
+        });//点击“抽奖记录”，显示纪录div
+        $('.close-shuoming').click(function () {
+            $('.shuomingdiv').fadeOut();
         });//点击“关闭”，隐藏纪录div
         //转盘旋转程序，传入参数为json字符串
         function start(a) {
