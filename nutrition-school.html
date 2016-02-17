@@ -78,6 +78,7 @@
         }
         .content img{
             width: 100%;
+            border-radius: 5px;
         }
         header{
             position: relative;
@@ -153,6 +154,8 @@
 <div class="content"><a href="#"><img src="images/yingyang.02_05.png" alt=""></a></div>
 <div class="content"><a href="#"><img src="images/yingyang.03_05.png" alt=""></a></div>
 <div class="content"><a href="#"><img src="images/yingyang.04_05.png" alt=""></a></div>
+<div class="content"><a href="#"><img src="images/connection.png" alt=""></a></div>
+<div class="content"><a href="#"><img src="images/shai_05.png" alt=""></a></div>
 
 
 <script src="js/jquery-1.10.1.js"></script>
@@ -161,6 +164,8 @@
         $('.close').click(function(){
             window.close();
         });
+        var imgWidth = $('.content img').eq(0).width();
+        $('.content img').height(imgWidth*0.54222);
     });
 </script>
 </body>
