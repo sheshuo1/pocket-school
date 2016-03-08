@@ -240,7 +240,7 @@
             background-size: 100% 100%;
             padding: 15% 2% 5% 2%;
             width: 60%;
-            min-height: 300px;
+            height: 300px;
             position: absolute;
             top: 80px;
             display: none;
@@ -252,6 +252,12 @@
 
         .zuoyediv dd {
             padding-left: 2rem;
+        }
+        .zuoyediv textarea{
+            background: none;
+            border: none;
+            width:100%;
+            height: 100%;
         }
     </style>
 </head>
@@ -505,29 +511,19 @@
     </table>
 </div>
 <div class="zuoyediv div">
-    <dl>
-        <dt>语文：</dt>
-        <dd>
-            <ol>
-                <li>抄写《蜀道难》两遍抄写《蜀道难》两遍抄写《蜀道难》两遍抄写《蜀道难》两遍</li>
-                <li>抄写《蜀道难》两遍抄写《蜀道难》两遍抄写《蜀道难》两遍抄写《蜀道难》两遍</li>
-            </ol>
-        </dd>
-        <dt>数学：</dt>
-        <dd>
-            <ol>
-                <li>第二章第2，3题</li>
-                <li>课后作业全做</li>
-            </ol>
-        </dd>
-        <dt>英语：</dt>
-        <dd>
-            <ol>
-                <li>抄写课文</li>
-                <li>单词背诵</li>
-            </ol>
-        </dd>
-    </dl>
+    <textarea>
+       抄写《蜀道难》两遍抄写《蜀道难
+        两遍抄写《蜀道难》两遍抄写
+        《蜀道难》两遍
+        抄写《蜀道难》两遍抄写《蜀道难》
+        两遍抄写《蜀道难》
+        两遍抄写《蜀道难》两遍
+
+        第二章第2，3
+        题课后作业全做
+        抄写课文单词背诵
+    </textarea>
+
 </div>
 <!--<script src="js/jquery-1.10.1.js"></script>-->
 <script src="js/zepto.min.full.js"></script>
@@ -542,21 +538,21 @@
         });
         //点击按钮，弹出div，同时隐藏其他弹窗，并阻止事件冒泡
         $('.qiandao').click(function (e) {
-            $('.qiandaodiv').fadeIn();
+            $('.qiandaodiv').fadeToggle();
             $('.zuoyediv').fadeOut();
             $('.dianpingdiv').fadeOut();
             e.stopPropagation();
         });
         //点击按钮，弹出div，同时隐藏其他弹窗，并阻止事件冒泡
         $('.zuoye').click(function (e) {
-            $('.zuoyediv').fadeIn();
+            $('.zuoyediv').fadeToggle();
             $('.qiandaodiv').fadeOut();
             $('.dianpingdiv').fadeOut();
             e.stopPropagation();
         });
         //点击按钮，弹出div，同时隐藏其他弹窗，并阻止事件冒泡
         $('.dianping').click(function (e) {
-            $('.dianpingdiv').fadeIn();
+            $('.dianpingdiv').fadeToggle();
             $('.qiandaodiv').fadeOut();
             $('.zuoyediv').fadeOut();
             e.stopPropagation();

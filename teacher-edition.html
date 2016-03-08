@@ -61,7 +61,7 @@
             background: #df1b49;
         }
         .classwork{
-            width: 90vw;
+            width: 90%;
             position: absolute;
             top:5%;
             left:5%;
@@ -117,15 +117,15 @@
 
         //点击布置作业，显示布置作业
         $('.btn-work').click(function(){
-            $('.classwork').show('slow');
+            $('.classwork').show('fast');
             $('.header').hide();
         });
 
         //点击取消，隐藏作业
         $('.btn-work-cancel').click(function(){
-            $('.classwork').hide('slow');
+            $('.classwork').hide('fast');
             $('.classwork .text').val('');
-            $('.header').show('slow');
+            $('.header').show('fast');
         });
 
     });

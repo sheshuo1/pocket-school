@@ -12,6 +12,8 @@
             font-family: 'Microsoft YaHei', sans-serif;
             -webkit-outline:0;
             outline:0;
+            margin:0;
+            padding:0;
         }
         html{
             background: rgb(218, 224, 214);
@@ -102,11 +104,11 @@
             margin: 5% 3%;
             background: rgb(253, 253, 243);
             text-align: center;
-            display: none;
         }
 
         .div h1 {
             font-size: 1.5rem;
+            line-height: 2;
             font-family: 'Microsoft YaHei', sans-serif;
         }
 
@@ -167,7 +169,7 @@
             color: red;
             text-align: left;
             padding: 0 10%;
-            line-height: 1.5;
+            line-height: 2;
         }
 
         ul {
@@ -196,8 +198,31 @@
             border-radius: 20px;
             border: 2px solid #2373CC;
             padding: 5px 40px;
-            margin-bottom: 10%;
+            margin: 10% auto;
         }
+        .resultdiv{
+
+            top:25%;
+        }
+        .resultdiv p{
+            text-align: center;
+        }
+        .resultdiv .resultTxt{
+            font-size: 1.2rem;
+        }
+        .resultdiv .close-result{
+            margin: 5px auto;
+        }
+        .modal{
+            position: absolute;
+            top:0;
+            left:0;
+            width:100%;
+            height:100%;
+            background: rgba(0,0,0,0.2);
+            display: none;
+        }
+
     </style>
 </head>
 <body>
@@ -206,117 +231,121 @@
 <button class="btn shuoming"><b>抽奖说明</b></button>
 <div class="xiaofengche"><b>积分剩余：<span class="fengche-number">310</span></b></div>
 <div class="zhuanpan">
-    <!--<img class="rotate-con-pan" src="images/disk.jpg" alt="disk"/>-->
-
     <div class="zhizhen"><img class="rotate-con-zhen" src="images/start.png" alt="start"/></div>
 </div>
 <div class="tixing"><b>每次抽奖仅消耗<span class="redword">10积分</span>哦</b></div>
+<div class="modal modal-jilu">
+    <div class="div jilu">
+        <h1>抽奖记录</h1>
 
-<div class="div jilu">
-    <h1>抽奖记录</h1>
+        <div class="jilu-header">
+            <div>总下注积分<span>130</span></div>
+            <div>总中奖积分<span>160</span></div>
+        </div>
+        <table class="jilutable">
+            <tr>
+                <th>投注</th>
+                <th>中奖</th>
+                <th>时间</th>
+            </tr>
+            <tr>
+                <td>10</td>
+                <td>30</td>
+                <td>21：21</td>
+            </tr>
+            <tr>
+                <td>10</td>
+                <td><img src="images/no-price.jpg" alt=""/></td>
+                <td>9-30</td>
+            </tr>
+            <tr>
+                <td>10</td>
+                <td>30</td>
+                <td>10-12</td>
+            </tr>
+            <tr>
+                <td>10</td>
+                <td><img src="images/no-price.jpg" alt=""/></td>
+                <td>4-16</td>
+            </tr>
+            <tr>
+                <td>10</td>
+                <td>30</td>
+                <td>8-9</td>
+            </tr>
+            <tr>
+                <td>10</td>
+                <td><img src="images/no-price.jpg" alt=""/></td>
+                <td>12-7</td>
+            </tr>
 
-    <div class="jilu-header">
-        <div>总下注积分<span>130</span></div>
-        <div>总中奖积分<span>160</span></div>
+
+        </table>
+        <p>可查询三个月内的抽奖记录</p>
+        <ul>
+            <li>
+                <div class="switchpage">上一页</div>
+            </li>
+            <li>
+                <div>1/2</div>
+            </li>
+            <li>
+                <div class="switchpage">下一页</div>
+            </li>
+        </ul>
+        <button class="close close-jilu">关 闭</button>
     </div>
-    <table class="jilutable">
-        <tr>
-            <th>投注</th>
-            <th>中奖</th>
-            <th>时间</th>
-        </tr>
-        <tr>
-            <td>10</td>
-            <td>30</td>
-            <td>21：21</td>
-        </tr>
-        <tr>
-            <td>10</td>
-            <td><img src="images/no-price.jpg" alt=""/></td>
-            <td>9-30</td>
-        </tr>
-        <tr>
-            <td>10</td>
-            <td>30</td>
-            <td>10-12</td>
-        </tr>
-        <tr>
-            <td>10</td>
-            <td><img src="images/no-price.jpg" alt=""/></td>
-            <td>4-16</td>
-        </tr>
-        <tr>
-            <td>10</td>
-            <td>30</td>
-            <td>8-9</td>
-        </tr>
-        <tr>
-            <td>10</td>
-            <td><img src="images/no-price.jpg" alt=""/></td>
-            <td>12-7</td>
-        </tr>
-
-
-    </table>
-    <p>可查询三个月内的抽奖记录</p>
-    <ul>
-        <li>
-            <div class="switchpage">上一页</div>
-        </li>
-        <li>
-            <div>1/2</div>
-        </li>
-        <li>
-            <div class="switchpage">下一页</div>
-        </li>
-    </ul>
-    <button class="close close-jilu">关 闭</button>
 </div>
 
-<div class="div shuomingdiv">
-    <h1>抽奖说明</h1>
-    <span class="title">每签到一次，奖励1积分</span>
-    <p>一等奖：苹果笔记本一台</p>
-    <p>二等奖：苹果iphone6S一部</p>
-    <p>三等奖：小米4S一部</p>
-    <p>四等奖：卫生纸一卷</p>
-    <p>五等奖：矿泉水一瓶</p>
-    <p>安慰奖：无</p>
-    <button class="close close-shuoming">关 闭</button>
+<div class="modal modal-shuoming">
+    <div class="div shuomingdiv">
+        <h1>抽奖说明</h1>
+        <span class="title">每签到一次，奖励1积分</span>
+        <p>一等奖：苹果笔记本一台</p>
+        <p>二等奖：苹果iphone6S一部</p>
+        <p>三等奖：小米4S一部</p>
+        <p>四等奖：卫生纸一卷</p>
+        <p>五等奖：矿泉水一瓶</p>
+        <p>安慰奖：无</p>
+        <button class="close close-shuoming">关 闭</button>
+    </div>
 </div>
+
+<div class="modal modal-result">
+    <div class="div resultdiv">
+        <h1>恭喜！</h1>
+        <p class="resultTxt">您抽中一等奖“洗衣机一台”！</p>
+        <p>谢谢参与！</p>
+        <button class="close close-result">关 闭</button>
+    </div>
+</div>
+
 <script type="text/javascript">
-    /*   $(function () {
-     $(".rotate-con-zhen").rotate({
-     bind: {
-     click: function () {
-     var a = runzp();
-     $(this).rotate({
-     duration: 3000,               //转动时间
-     angle: 0,                    //起始角度
-     animateTo: 1440 + a.angle,      //结束的角度
-     easing: $.easing.easeOutSine,//动画效果，需加载jquery.easing.min.js
-     callback: function () {
-     alert(a.prize + a.message);//简单的弹出获奖信息
-     }
-     });
-     }
-     }
-     });
-     });
-     */
+
     $(function () {
+        //点击“抽奖记录”，显示纪录div
         $('.choujiangjilu').click(function () {
-            $('.jilu').fadeIn();
-        });//点击“抽奖记录”，显示纪录div
+            $('.modal-jilu').fadeIn();
+        });
+        //点击“关闭”，隐藏纪录div
         $('.close-jilu').click(function () {
-            $('.jilu').fadeOut();
-        });//点击“关闭”，隐藏纪录div
+            $('.modal-jilu').fadeOut();
+        });
+        //点击“抽奖记录”，显示纪录div
         $('.shuoming').click(function () {
-            $('.shuomingdiv').fadeIn();
-        });//点击“抽奖记录”，显示纪录div
+            $('.modal-shuoming').fadeIn();
+        });
+        //点击“关闭”，隐藏纪录div
         $('.close-shuoming').click(function () {
-            $('.shuomingdiv').fadeOut();
-        });//点击“关闭”，隐藏纪录div
+            $('.modal-shuoming').fadeOut();
+        });
+        //点击“关闭”，隐藏抽奖结果div
+        $('.close-result').click(function () {
+            $('.modal-result').fadeOut();
+        });
+
+
+
         //转盘旋转程序，传入参数为json字符串
         function start(a) {
             //先解析json字符串
@@ -328,7 +357,8 @@
                 animateTo: 1440 + aa.angle,      //结束的角度
                 easing: $.easing.easeOutExpo,//动画效果，需加载jquery.easing.min.js
                 callback: function () {
-                    alert(aa.message);       //简单的弹出获奖信息
+//                    alert(aa.message);       //简单的弹出获奖信息
+                    $('.modal-result').fadeIn();
                 }
             });
         }
@@ -340,6 +370,30 @@
         });
     });
 
+//alert弹出框
+    function showAlert(message){
+        var $modalAlert = $('<div class="modal-div"></div>').css({'position':'fixed','top':'0','left':'0','width':'100%','height':'100%','background':'rgba(0,0,0,0.2)'}).appendTo('body');
+        var $box = $('<div class="alertbox"></div>').css({'width':'80%','position':'fixed','border-radius': '5px','top':'50%','left':'10%','transform':'translate(0,-50%)','background':'#eee','overflow':'hidden'}).appendTo($modalAlert);
+        $('<p class="message">'+message+'</p>').css({'font-size':'20px','line-height':'2','text-align':'center','padding':'30px 10px'}).appendTo($box);
+        var $ok = $('<button class="ok">确 定</button>').css({'display':'block','width':'100%','background':'#eee','border':'none','border-top':'1px solid #ccc','font-size':'22px','color':'#22ccff','line-height':'2.5'}).appendTo($box);
+        $ok.click(function(){
+            $modalAlert.hide();
+            $modalAlert.remove();
+        });
+    }
+
+//confirm弹出框
+    function showConfirm(message){
+        var $modalConfirm = $('<div class="modal-div"></div>').css({'position':'fixed','top':'0','left':'0','width':'100%','height':'100%','background':'rgba(0,0,0,0.2)'}).appendTo('body');
+        var $box = $('<div class="alertbox"></div>').css({'width':'80%','border-radius': '5px','position':'fixed','top':'50%','left':'10%','transform':'translate(0,-50%)','background':'#eee','overflow':'hidden'}).appendTo($modalConfirm);
+        $('<p class="message">'+message+'</p>').css({'font-size':'20px','line-height':'2','text-align':'center','padding':'30px 10px'}).appendTo($box);
+        var $ok = $('<button class="ok">确 定</button><button class="cancel">取 消</button> ').css({'display':'inline-block','width':'50%','background':'#eee','border':'none','border-top':'1px solid #ccc','font-size':'22px','color':'#22ccff','line-height':'2.5'}).appendTo($box);
+        $ok.click(function(){
+            $modalConfirm.hide();
+            $modalConfirm.remove();
+        });
+    }
+    showConfirm("这是一个测试文字");
 </script>
 </body>
 </html>

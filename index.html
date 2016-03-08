@@ -69,6 +69,18 @@
         input[type="text"]:focus{
             width: 200px;
         }
+
+        .center{
+            background-color: black;
+            margin-left:210px;
+            width: 100%;
+
+        }
+        .float-left{
+            background-color: red;
+            float: left;
+            width:200px;
+        }
     </style>
 </head>
 <body onload="draw()">
@@ -145,6 +157,9 @@
     <a href="BagSchool.apk">
         <button class="btn btn-default">BagSchool.apk</button>
     </a>
+    <a href="lantern-android-beta.apk">
+        <button class="btn btn-default">lantern-android-beta</button>
+    </a>
 </div>
 <hr>
 <div class="main">
@@ -156,6 +171,12 @@
         <li><a href="#">客服</a></li>
         <li><a href="#">帮助</a></li>
     </ul>
+    <div class="contain">
+        <div class="float-left">left</div>
+        <div class="center">main</div>
+
+    </div>
+
 </div>
 <hr>
 <form action="#">
@@ -264,6 +285,7 @@
                 $('.php').text(data);
             });
         });
+
     });
 
 
