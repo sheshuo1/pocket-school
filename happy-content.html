@@ -58,38 +58,5 @@
     <img src="images/teacher_02.png" alt=""/>
     <img src="images/shai_05.png" alt=""/>
 </div>
-<script src="js/jquery-1.10.1.js"></script>
-<script>
-    function addLoading(){
-        var $div = $('<div class="loading"></div>').css({'position':'fixed','top':'0','left':'0','width':'100%','height':'100%','background':'rgba(0,0,0,0.5)'}).appendTo('body');
-        $('<img src="images/loading_2.gif">').css({'position':'absolute','width':'50px','height':'50px','top':'30%','left':'50%','transform':'translate(-50%,0)'}).appendTo($div);
-    }
-    addLoading();
-
-
-
-    function showAlert(message){
-        var $modal = $('<div class="modal"></div>').css({'position':'fixed','top':'0','left':'0','width':'100%','height':'100%','background':'rgba(0,0,0,0.2)'}).appendTo('body');
-        var $box = $('<div class="alertbox"></div>').css({'width':'80%','position':'fixed','border-radius': '5px','top':'50%','left':'10%','transform':'translate(0,-50%)','background':'#eee','overflow':'hidden'}).appendTo($modal);
-        $('<p class="message">'+message+'</p>').css({'font-size':'20px','line-height':'2','text-align':'center','padding':'20px 10px'}).appendTo($box);
-        var $ok = $('<button class="ok">确 定</button>').css({'display':'block','width':'100%','background':'#eee','border':'none','border-top':'1px solid #ccc','font-size':'22px','color':'#22ccff','line-height':'2'}).appendTo($box);
-        $ok.click(function(){
-            $modal.hide();
-        });
-    }
-//    showAlert('afvavqervqerv');
-
-
-    function showConfirm(message){
-        var $modal = $('<div class="modal"></div>').css({'position':'fixed','top':'0','left':'0','width':'100%','height':'100%','background':'rgba(0,0,0,0.2)'}).appendTo('body');
-        var $box = $('<div class="alertbox"></div>').css({'width':'80%','border-radius': '5px','position':'fixed','top':'50%','left':'10%','transform':'translate(0,-50%)','background':'#eee','overflow':'hidden'}).appendTo($modal);
-        $('<p class="message">'+message+'</p>').css({'font-size':'20px','line-height':'2','text-align':'center','padding':'20px 10px'}).appendTo($box);
-        var $ok = $('<button class="ok">确 定</button><button class="cancel">取 消</button> ').css({'display':'inline-block','width':'50%','background':'#eee','border':'none','border-top':'1px solid #ccc','font-size':'22px','color':'#22ccff','line-height':'2'}).appendTo($box);
-        $ok.click(function(){
-            $modal.hide();
-        });
-    }
-//    showConfirm('这是油条哥');
-</script>
 </body>
 </html>
