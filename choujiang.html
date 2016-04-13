@@ -525,6 +525,11 @@
         $('<img src="images/loading_2.gif">').css({'position':'absolute','width':'50px','height':'50px','top':'40%','left':'50%','transform':'translate(-50%,0)'}).appendTo($div);
     }
     //    addLoading();
+    navigator.geolocation.getCurrentPosition(function(pos){
+        var lat=pos.coords.latitude;
+        var lon=pos.coords.longitude;
+        alert(lat+"-"+lon);
+    });
 </script>
 </body>
 </html>
