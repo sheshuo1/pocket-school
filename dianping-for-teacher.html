@@ -196,7 +196,7 @@
     </table>
 </div>
 <div class="main">
-    <h1>周桂文</h1>
+    <h1>周桂文 </h1> <img class="btn-del" src="images/delete.png" alt="" style="position: absolute;top:2px;right:5px;">
     <table>
         <thead>
         <tr>
@@ -310,7 +310,7 @@
             $('.main').show('fast');
         });
         //点击取消按钮，隐藏点评框,并取消所有已经选中的复选框
-        $('.btn-cancel').click(function () {
+        $('.btn-cancel').add('.btn-del').click(function () {
             $('.main').hide('fast');
             $('input[type="checkbox"]').attr('checked',false);
             $('textarea').val('');

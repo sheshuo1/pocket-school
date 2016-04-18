@@ -221,9 +221,7 @@
             height:100%;
             background: rgba(0,0,0,0.2);
             display: none;
-        }
-        .modal-gift{
-            z-index: 10;
+            z-index: 100;
         }
         .giftdiv img{
             width: 90%;
@@ -358,6 +356,7 @@
             </li>
         </ul>
         <button class="close close-jilu">关 闭</button>
+        <img class="div-loading" src="images/loading_2.gif" style="position:absolute;width:50px;height:50px;top:40%;left:50%;transform:translate(-50%,0);">
     </div>
 </div>
 
@@ -525,11 +524,7 @@
         $('<img src="images/loading_2.gif">').css({'position':'absolute','width':'50px','height':'50px','top':'40%','left':'50%','transform':'translate(-50%,0)'}).appendTo($div);
     }
     //    addLoading();
-    navigator.geolocation.getCurrentPosition(function(pos){
-        var lat=pos.coords.latitude;
-        var lon=pos.coords.longitude;
-        alert(lat+"-"+lon);
-    });
+
 </script>
 </body>
 </html>

@@ -52,7 +52,7 @@ gulp.task('scripts', function() {
         .pipe(gulp.dest('build/js'));
 });
 //压缩合并css文件
-gulp.task('scripts', function() {
+gulp.task('css', function() {
     return gulp.src('css/*.css')
         .pipe(minifyCSS())
         .pipe(concat('all.min.css'))
