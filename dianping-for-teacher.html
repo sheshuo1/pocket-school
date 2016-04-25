@@ -53,7 +53,10 @@
     tr{
         height: 3rem;
     }
-    tr.odd{
+   /* tr.odd{
+        background: #b8e6be;
+    }*/
+    tr:nth-child(even){
         background: #b8e6be;
     }
     .main{
@@ -196,7 +199,7 @@
     </table>
 </div>
 <div class="main">
-    <h1>周桂文 </h1> <img class="btn-del" src="images/delete.png" alt="" style="position: absolute;top:2px;right:5px;">
+    <h1>周桂文 </h1> <img class="btn-del" src="images/delete.png" alt="" style="position: absolute;top:6px;right:6px;width:30px;height: 30px;">
     <table>
         <thead>
         <tr>
@@ -297,7 +300,7 @@
 <script>
     $(function () {
         //设置table间隔行背景色
-        $('tbody tr:odd').addClass('odd');
+//        $('tbody tr:odd').addClass('odd');
         //同行的复选框只能选一个
         $('input[type="checkbox"]').click(function () {
             var name = $(this).attr('name');

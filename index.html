@@ -38,9 +38,9 @@
             width: 50vw;
             height: 50vh;
         }
-        *::selection{
-            background: red;
-        }
+        ::selection { background: #e2eae2; }
+        ::-moz-selection { background: #e2eae2; }
+        ::-webkit-selection { background: #e2eae2; }
         p {
             /*animation-duration: 3s;
             animation-name: slidein;*/
@@ -86,16 +86,62 @@
         .back{
             width:50px;
             height:50px;
-            margin:20px;
+            margin:100px;
             padding:20px;
             border: 5px solid black;
             background:url("images/radio_07.png") no-repeat top,url("images/radio_09.png") no-repeat bottom;
             background-size: 20%;
 
         }
+
+
+        .cloud {
+            position: absolute;
+        }
+        @keyframes bobble {
+            0% {
+                transform: translate3d(50px, 20px, 0px);
+                animation-timing-function: ease-in;
+            }
+            50% {
+                transform: translate3d(100px, 150px, 0px);
+                animation-timing-function: ease-out;
+            }
+            100% {
+                transform: translate3d(50px, 20px, 0px);
+            }
+        }
+
+        #bigcloud {
+            margin-left: 100px;
+            margin-top: 15px;
+            animation: bobble 2s infinite;
+        }
+
+        #smallcloud {
+            animation: bobble 4s infinite;
+            margin-top: 65px;
+            margin-left: 200px;
+        }
+        @font-face {
+            font-family: 'pinghei';
+            src:    url('fonts/pinghei.eot');
+            src:
+                    url('fonts/pinghei.eot?#font-spider') format('embedded-opentype'),
+                    url('fonts/pinghei.woff') format('woff'),
+                    url('fonts/pinghei.ttf') format('truetype'),
+                    url('fonts/pinghei.svg') format('svg');
+            font-weight: normal;
+            font-style: normal;
+        }
+        .h1{
+            text-align: center;
+            font-family:'pinghei';
+        }
     </style>
 </head>
 <body onload="draw()">
+<h1 class="h1">字体测试阿斯顿不能abcdefg</h1>
 <p>这是一个测试问负担</p>
 <hr>
 <div class="main">
@@ -188,7 +234,6 @@
         <div class="center">main</div>
 
     </div>
-
 </div>
 <hr>
 <form action="#">
@@ -211,14 +256,14 @@
 <br><br><br><br>
 <style>
     .transtion{
-        width: 50%;
-        padding-top:50%;
+        width: 50px;
+        height:50px;
         position: relative;
         left:0;
         background: blue;
-        transition: width 2s,height 2s,left 2s;
+        transition: all 2s ease 5s;
     }
-    .transtion:active{
+    .transtion.active{
         width: 100px;
         height: 100px;
         left:100%;
@@ -343,6 +388,22 @@
 
     }
 
+
+
+    var dot = document.querySelector('.back');
+    var frames = [
+        {transform: 'rotate(0deg) translate(80px)'},
+        {transform: 'rotate(360deg) translate(80px) '},
+    ];
+    var timing = {
+        duration: 2500,         //ms
+        delay: 0,               //ms
+        iterations: Infinity,   //1, 2, 3 ... Infinity
+        direction: 'alternate', //'normal', 'reverse'等
+        easing: 'ease-in-out',  //'linear', 'ease-in'等
+        fill: 'forwards',       //'backwards', 'both', 'none', 'auto'
+    };
+    dot.animate(frames, timing);
 
 </script>
 </body>

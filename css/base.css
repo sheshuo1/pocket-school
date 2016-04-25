@@ -443,7 +443,6 @@ li {
     height: 310px;
     margin: 0 0;
     padding: 10px 0;
-
 }
 
 .otherjigou {
@@ -602,18 +601,10 @@ padding:0 0 8px 0;
     line-height: 220px;
     font-size: 180px;
     color: white;
-    -webkit-opacity: 0.3;
-    -moz-opacity: 0.3;
-    -ms-opacity: 0.3;
-    -o-opacity: 0.3;
     opacity: 0.3;
     cursor: pointer;
 }
 .reload:hover{
-    -webkit-opacity: 0.8;
-    -moz-opacity: 0.8;
-    -ms-opacity: 0.8;
-    -o-opacity: 0.8;
     opacity: 0.8;
 }
 /*演艺资源导航条*/
