@@ -82,6 +82,11 @@ gulp.task('help', function() {
     console.log('  gulp autofx          自动添加CSS前缀');
 });
 
+gulp.task('test',function(){
+    gulp.src('**/*.css')
+        .pipe(gulp.dest('dist'));
+});
+
 gulp.task('default',function(){
     gulp.start('help');
 });
