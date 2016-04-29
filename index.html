@@ -137,15 +137,53 @@
         }
         .h1{
             text-align: center;
-            font-family:'pinghei';
+            font-family:'pinghei',sans-serif;
         }
+        @keyframes bounceInDown {
+            from, 60%, 75%, 90%, to {
+                -webkit-animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+                animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+            }
+
+            0% {
+                opacity: 0;
+                -webkit-transform: translate3d(0, -3000px, 0);
+                transform: translate3d(0, -3000px, 0);
+            }
+
+            60% {
+                opacity: 1;
+                -webkit-transform: translate3d(0, 25px, 0);
+                transform: translate3d(0, 25px, 0);
+            }
+
+            75% {
+                -webkit-transform: translate3d(0, -10px, 0);
+                transform: translate3d(0, -10px, 0);
+            }
+
+            90% {
+                -webkit-transform: translate3d(0, 5px, 0);
+                transform: translate3d(0, 5px, 0);
+            }
+
+            to {
+                -webkit-transform: none;
+                transform: none;
+            }
+        }
+
+        .bounceInDown {
+            animation: bounceInDown 1s;
+        }
+
     </style>
 </head>
 <body onload="draw()">
 <h1 class="h1">字体测试阿斯顿不能abcdefg</h1>
 <p id="p">这是一个测试问负担</p>
 <hr>
-<div class="main">
+<div class="main  bounceInDown">
     <p>导航</p>
     <a href="choujiang.html">
         <button class="btn btn-default">choujiang</button>

@@ -65,7 +65,9 @@
             background: rgb(255, 105, 106);
             border: solid 1px red;
             border-radius: 50px;
+            background-clip:padding-box;
             margin:2%;
+            line-height: 1.5;
         }
         .choujiangjilu {
             float: right;
@@ -73,9 +75,10 @@
 
         .shuoming {
             float: left;
-
         }
-
+        .margin-fix{
+            margin-top: 2.5rem !important;
+        }
         .tixing {
             color: white;
             background: #BCDDA4;
@@ -83,6 +86,7 @@
             width: 280px;
             border: solid 1px #5CDD76;
             border-radius: 50px;
+            background-clip:padding-box;
             font-size: 1rem;
             letter-spacing: 0.2rem;
             font-family: 'Microsoft YaHei', sans-serif;
@@ -98,6 +102,7 @@
         .div {
             border: 8px #FF8471 solid;
             border-radius: 20px;
+            background-clip:padding-box;
             width: 90%;
             position: absolute;
             top: 0;
@@ -118,6 +123,7 @@
             background: red;
             margin: 0 5%;
             border-radius: 8px;
+            background-clip:padding-box;
             color: white;
         }
 
@@ -134,6 +140,7 @@
             font-weight: 700;
             padding: 0 5px;
             border-radius: 5px;
+            background-clip:padding-box;
         }
 
         .jilutable {
@@ -182,10 +189,31 @@
             width: 30%;
             box-sizing: border-box;
         }
-
+        .jilu-list{
+            margin:10px 0;
+        }
+        .jilu-list li{
+            width: 45%;
+        }
+        .jilu-list button{
+            border: none;
+            background: none;
+            font-size: 1.5rem;
+            padding:5px 10px;
+            border-radius: 8px;
+            background-clip:padding-box;
+        }
+        .switch-active{
+            background: red !important;
+            color: white;
+        }
+        .hidden{
+            display: none;
+        }
         .switchpage {
             padding: 5px 0;
             border-radius: 15px;
+            background-clip:padding-box;
             background: red;
             margin: 0 10px;
             color: white;
@@ -196,6 +224,7 @@
             font-size: 1.2rem;
             background: rgb(18, 190, 226);
             border-radius: 20px;
+            background-clip:padding-box;
             border: 2px solid #2373CC;
             padding: 5px 40px;
             margin: 10% auto;
@@ -285,11 +314,27 @@
         .btn:active{
             background: red;
         }
+        .fix-titile{
+            position: fixed;
+            width: 100%;
+            top:0;
+            left:0;
+            z-index: 10;
+            background: rgba(218, 224, 214,0.8);
+            color:red;
+            font-size: 11px;
+            line-height: 2;
+            text-align: center;
+            display: none;
+        }
+        .show{
+            display: block;
+        }
     </style>
 </head>
 <body>
-
-<button class="btn choujiangjilu"><b>抽奖记录</b></button>
+<p class="fix-titile">该活动苹果公司不是赞助商，并且苹果也不会以任何形式参与。</p>
+<button class="btn choujiangjilu"><b>&nbsp;&nbsp;记&nbsp;&nbsp;&nbsp;录&nbsp;&nbsp;</b></button>
 <button class="btn shuoming"><b>抽奖说明</b></button>
 <div class="xiaofengche"><b>积分剩余：<span class="fengche-number">310</span></b></div>
 <div class="zhuanpan">
@@ -298,7 +343,14 @@
 <div class="tixing"><b>每次抽奖仅消耗<span class="redword">10积分</span>哦</b></div>
 <div class="modal modal-jilu">
     <div class="div jilu">
-        <h1>抽奖记录</h1>
+        <ul class="jilu-list">
+            <li>
+                <button class="switch-choujiang switch-active">抽奖记录</button>
+            </li>
+            <li>
+                <button class="switch-duihuan">兑换记录</button>
+            </li>
+        </ul>
 
         <div class="jilu-header">
             <div>总下注积分<span>130</span></div>
@@ -306,9 +358,9 @@
         </div>
         <table class="jilutable">
             <tr>
-                <th>投注</th>
-                <th>中奖</th>
-                <th>时间</th>
+                <th class="list-1">投注</th>
+                <th class="list-2">中奖</th>
+                <th class="list-3">时间</th>
             </tr>
             <tr>
                 <td>10</td>
@@ -343,7 +395,7 @@
 
 
         </table>
-        <p>可查询三个月内的抽奖记录</p>
+        <p class="text">可查询三个月内的抽奖记录</p>
         <ul>
             <li>
                 <div class="switchpage">上一页</div>
@@ -356,7 +408,7 @@
             </li>
         </ul>
         <button class="close close-jilu">关 闭</button>
-        <img class="div-loading" src="images/loading_2.gif" style="position:absolute;width:50px;height:50px;top:40%;left:50%;transform:translate(-50%,0);-webkit-transform:translate(-50%,0);">
+        <!--<img class="div-loading" src="images/loading_2.gif" style="position:absolute;width:50px;height:50px;top:40%;left:50%;transform:translate(-50%,0);-webkit-transform:translate(-50%,0);">-->
     </div>
 </div>
 
@@ -467,7 +519,31 @@
         $('.close-gift').click(function () {
             $('.modal-gift').fadeOut();
         });
-
+        //点击“兑换记录”，切换状态
+        $('.switch-duihuan').on('click',function(){
+            if(!$(this).hasClass('switch-active')){
+                $(this).addClass('switch-active');
+                $('.switch-choujiang').removeClass('switch-active');
+                $('.jilu-header').addClass('hidden');
+                $('.text').html('兑换物品由班主任负责发放');
+                $('.list-1').html('商品');
+                $('.list-2').html('状态');
+            }
+        });
+        //点击“抽奖记录”，切换状态
+        $('.switch-choujiang').on('click',function(){
+            if(!$(this).hasClass('switch-active')){
+                $(this).addClass('switch-active');
+                $('.switch-duihuan').removeClass('switch-active');
+                $('.jilu-header').removeClass('hidden');
+                $('.text').html('可查询三个月内的抽奖记录');
+                $('.list-1').html('积分');
+                $('.list-2').html('奖品');
+            }
+        });
+        //动态显示提示语
+        $('.fix-titile').addClass('show');
+        $('.choujiangjilu,.shuoming').addClass('margin-fix');
 
 
         //转盘旋转程序，传入参数为json字符串
