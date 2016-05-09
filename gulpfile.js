@@ -32,40 +32,45 @@ var cssSrc = 'src/css/*.css',
 gulp.task('reload', function() {
     livereload.reload();
 });
+
 //监听文件变动
 gulp.task('watch', function() {
   livereload.listen();
   gulp.watch('**/*.*', ['reload']);
 });
+
 //自动添加css前缀
 gulp.task('autofx', function () {
-    gulp.src('src/css/*.css')
+    gulp.src(cssSrc)
         .pipe(autoprefixer({
             browsers: ['last 2 versions', 'Android >= 4.0','> 5%'],
             cascade: true, //是否美化属性值 默认：true 像这样：
             remove:true //是否去掉不必要的前缀 默认：true 
         }))
         .pipe(rename({ suffix: '.fx' }))
-        .pipe(gulp.dest('src/css'));
+        .pipe(gulp.dest(cssSrc));
 });
+
 //自动编译less文件
 gulp.task('less',function(){
     gulp.src('src/css/*.less')
         .pipe(less())
-        .pipe(gulp.dest('src/css'));
+        .pipe(gulp.dest(cssSrc));
 });
+
 //压缩图片
 gulp.task('imagemin', function() {
-    gulp.src('src/images/sys/*.{jpg,png,gif}')
+    gulp.src(imgSrc)
         .pipe(imagemin({
             progressive: true,
             use: [pngquant()] //使用pngquant深度压缩png图片的imagemin插件
         }))
-        .pipe(gulp.dest('dist/images'));
+        .pipe(gulp.dest('src/images/min'));
 });
+
 //压缩js文件
 gulp.task('minjs', function() {
-    return gulp.src('src/js/*.js')
+    return gulp.src(jsSrc)
         .pipe(uglify())
         //.pipe(rename({ suffix: '.min' }))
         .pipe(rev())
@@ -76,7 +81,7 @@ gulp.task('minjs', function() {
 
 //CSS里更新引入文件版本号
 gulp.task('revCollectorCss', function () {
-    return gulp.src(['src/rev/**/*.json', 'src/css/*.css'])
+    return gulp.src(['src/rev/**/*.json', cssSrc])
         .pipe(revCollector())
         .pipe(gulp.dest(cssRevSrc));
 });
@@ -84,7 +89,7 @@ gulp.task('revCollectorCss', function () {
 
 //压缩css文件
 gulp.task('mincss',function() {
-    return gulp.src('src/css/*.css')
+    return gulp.src(cssRevSrc)
         .pipe(autoprefixer({
             browsers: ['last 2 versions', 'Android >= 4.0','> 5%'],
             cascade: true, //是否美化属性值 默认：true 像这样：
@@ -97,19 +102,19 @@ gulp.task('mincss',function() {
         .pipe(rev.manifest())
         .pipe(gulp.dest('src/rev/css'));
 });
+
 //压缩Html/更新引入文件版本
 gulp.task('minhtml', function () {
     return gulp.src(['src/rev/**/*.json', 'src/*.html'])
         .pipe(revCollector())
         .pipe(gulp.dest('dist'));
 });
+
 //字蛛
 gulp.task('fontspider', function() {
     return gulp.src('index.html')
         .pipe(fontSpider());
 });
-
-
 
 //Fonts & Images 根据MD5获取版本号
 gulp.task('revFont', function(){
