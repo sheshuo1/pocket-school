@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"/>
+    <title>签到管理</title>
+    <style>
+        * {
+            margin: 0 0;
+            padding: 0 0;
+            font-family: 'Microsoft YaHei', sans-serif;
+            outline: none;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        html {
+            font-size: 14px;
+        }
+
+        body {
+            background: #d9f2df url("images/background.jpg") no-repeat;
+            background-size: 100% 100%;
+            padding: 2%;
+            min-height: 90vh;
+        }
+
+        h1 span{
+            font-size: 1rem;
+            font-weight: 500;
+        }
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            background: #c7e4d3;
+            font-size: 1.4rem;
+            border: 1px solid green;
+        }
+        thead{
+            background: #7ac597;
+            line-height: 2;
+            text-align: left;
+        }
+        thead button{
+            display: block;
+            padding:3px 5px;
+            background: #379357;
+            border: 1px solid lawngreen;
+            color: white;
+            font-size: 1.2rem;
+            margin:0 auto;
+        }
+        tr{
+            height: 3rem;
+        }
+        tr.odd{
+            background: #b8e6be;
+        }
+        .checked,.border{
+            width: 2.5rem;
+            height: 2.5rem;
+            margin: 0 auto;
+        }
+        .checked{
+            background: url("images/qiandao-checked_05.png") no-repeat center;
+            background-size: 100% 100%;
+        }
+        .border{
+            background: url("images/qiandao-check_05.png") no-repeat center;
+            background-size: 100% 100%;
+        }
+
+        .btn-submit{
+            display: inline-block;
+            font-size: 1.4rem;
+            width: 50px;
+            height: 50px;
+            border-radius: 25px;
+            border: 2px solid greenyellow;
+            color: white;
+            background: #009944;
+            margin:0 0;
+            position: absolute;
+            top:3px;
+            right:10%;
+        }
+        .hide{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+<div class="qiandao">
+    <h1>签到管理</h1>
+    <span>教师不操作默认签到</span>
+    <button class="btn-submit">提交</button>
+
+    <table>
+        <thead>
+        <tr>
+            <th><button class="allCheck hide">全选</button><button class="allCancel">取消</button></th>
+            <th>姓名</th>
+            <th></th>
+            <th>姓名</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td><div class="checked"></div></td>
+            <td>周兴</td>
+            <td><div class="checked"></div></td>
+            <td>李晓明</td>
+        </tr>
+        <tr>
+            <td><div class="checked"></div></td>
+            <td>周兴鹏</td>
+            <td><div class="checked"></div></td>
+            <td>李晓明</td>
+        </tr>
+        <tr>
+            <td><div class="checked"></div></td>
+            <td>周兴鹏</td>
+            <td><div class="checked"></div></td>
+            <td>李晓明</td>
+        </tr>
+        <tr>
+            <td><div class="checked"></div></td>
+            <td>周兴鹏</td>
+            <td><div class="checked"></div></td>
+            <td>李晓明</td>
+        </tr>
+        <tr>
+            <td><div class="checked"></div></td>
+            <td>周兴鹏</td>
+            <td><div class="checked"></div></td>
+            <td>李晓明</td>
+        </tr>
+        <tr>
+            <td><div class="checked"></div></td>
+            <td>周兴鹏</td>
+            <td><div class="checked"></div></td>
+            <td>李晓明</td>
+        </tr>
+        <tr>
+            <td><div class="checked"></div></td>
+            <td>周兴鹏</td>
+            <td><div class="checked"></div></td>
+            <td>李晓明</td>
+        </tr>
+        <tr>
+            <td><div class="checked"></div></td>
+            <td>周兴鹏</td>
+            <td><div class="checked"></div></td>
+            <td>李晓明</td>
+        </tr>
+        <tr>
+            <td><div class="checked"></div></td>
+            <td>周兴鹏</td>
+            <td><div class="checked"></div></td>
+            <td>李晓明</td>
+        </tr>
+        <tr>
+            <td><div class="checked"></div></td>
+            <td>周兴鹏</td>
+            <td><div class="checked"></div></td>
+            <td>李晓明</td>
+        </tr>
+        <tr>
+            <td><div class="checked"></div></td>
+            <td>周兴鹏</td>
+            <td><div class="checked"></div></td>
+            <td>李晓明</td>
+        </tr>
+
+        </tbody>
+    </table>
+</div>
+<script src="js/jquery-1.10.1.js"></script>
+<script>
+    $(function () {
+        //设置table间隔行背景色
+        $('tbody tr:odd').addClass('odd');
+        //设置点击切换选中图标
+        $('.checked').add('.border').click(function(){
+            var className = $(this).attr('class');
+            if(className=='checked')
+            {
+                $(this).attr('class','border');
+            }
+            else{
+                $(this).attr('class','checked');
+            }
+        });
+        //点击全选
+        $('.allCheck').click(function(){
+            $('.border').attr('class','checked');
+            $(this).addClass('hide');
+            $('.allCancel').removeClass('hide');
+        });
+        //点击全取消
+        $('.allCancel').click(function(){
+            $('.checked').attr('class','border');
+            $(this).addClass('hide');
+            $('.allCheck').removeClass('hide');
+        });
+
+    });
+</script>
+</body>
+</html>

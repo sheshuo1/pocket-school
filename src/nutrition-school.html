@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"/>
+    <title>营养学堂</title>
+    <style>
+        * {
+            margin: 0 0;
+            padding: 0 0;
+            font-family: 'Microsoft YaHei', sans-serif;
+        }
+        a{
+            text-decoration: none;
+        }
+        html {
+            font-size: 14px;
+        }
+
+        body {
+            overflow: auto;
+        }
+        .weather{
+            position: relative;
+            color: white;
+        }
+        .weather .weather-data{
+            position: absolute;
+        }
+        .now{
+            top:3%;
+            left:5%;
+            font-size: 15vw;
+        }
+        .city{
+            top:13%;
+            left:40%;
+            font-size: 4vw;
+        }
+        .data{
+            top:40%;
+            left:20%;
+            font-size: 4vw;
+        }
+        .data img{
+            position: absolute;
+            width: 15vw;
+            top:0;
+            right:100%;
+        }
+        .data span{
+            float: left;
+        }
+        .advice{
+            display: block;
+            width: 90%;
+            border-radius: 5px;
+            top:65%;
+            left:5%;
+            font-size: 4vw;
+            background: rgba(128,128,128,0.5);
+        }
+        .head{
+            width: 100%;
+        }
+        h1{
+            color: #666;
+            font-size: 1.5rem;
+            padding-left: 2%;
+            line-height: 3rem;
+            clear: both;
+        }
+        .content{
+            box-sizing: border-box;
+            width: 50%;
+            padding:2%;
+            float: left;
+        }
+        .content img{
+            width: 100%;
+            border-radius: 5px;
+        }
+        header{
+            position: relative;
+        }
+        header img{
+            display: block;
+            width: 100%;
+        }
+        .close{
+            position: absolute;
+            width: 12%;
+            padding-top:12%;
+            top:20%;
+            left:2%;
+            background: url("images/exit.png") no-repeat center;
+            background-size: 95%;
+        }
+        .close:active{
+            background: url("images/exit1.png") no-repeat center;
+            background-size: 95%;
+        }
+        header h1{
+            color: white;
+            width: 95%;
+            font-size: 28px;
+            font-weight: 500;
+            text-align: center;
+            position: absolute;
+            top:50%;
+            transform: translate(0,-50%);
+        }
+    </style>
+</head>
+<body>
+<header>
+    <img src="images/bg_alltitle.png" alt="">
+    <h1>营养学堂</h1>
+    <div class="close"></div>
+
+</header>
+<div class="weather">
+    <img class="head" src="images/yingyang-head_02.png" alt="head">
+    <span class="weather-data now">17℃</span>
+    <div class="weather-data city">
+        <span>南宁</span><br>
+        <span>pm2.5:78</span>
+    </div>
+
+    <div class="weather-data data">
+        <img src="http://api.map.baidu.com/images/weather/day/qing.png" alt="">
+        <span>晴转多云</span><br>
+        <span>21 ~ 9℃</span>
+    </div>
+    <span class="weather-data advice">天冷空气湿度大且昼夜温差也很大，易发生感冒，请注意适当增减衣服</span>
+</div>
+<h1 class="title">春分节气</h1>
+<div class="content"><a href="#"><img src="images/yingyang.01_05.png" alt=""></a></div>
+<div class="content"><a href="#"><img src="images/yingyang.02_05.png" alt=""></a></div>
+<div class="content"><a href="#"><img src="images/yingyang.03_05.png" alt=""></a></div>
+<div class="content"><a href="#"><img src="images/yingyang.04_05.png" alt=""></a></div>
+<h1 class="title">健康选择</h1>
+<div class="content"><a href="#"><img src="images/yingyang.01_05.png" alt=""></a></div>
+<div class="content"><a href="#"><img src="images/yingyang.02_05.png" alt=""></a></div>
+<div class="content"><a href="#"><img src="images/yingyang.03_05.png" alt=""></a></div>
+<div class="content"><a href="#"><img src="images/yingyang.04_05.png" alt=""></a></div>
+<h1 class="title">春分节气</h1>
+<div class="content"><a href="#"><img src="images/yingyang.01_05.png" alt=""></a></div>
+<div class="content"><a href="#"><img src="images/yingyang.02_05.png" alt=""></a></div>
+<div class="content"><a href="#"><img src="images/yingyang.03_05.png" alt=""></a></div>
+<div class="content"><a href="#"><img src="images/yingyang.04_05.png" alt=""></a></div>
+<h1 class="title">春分节气</h1>
+<div class="content"><a href="#"><img src="images/yingyang.01_05.png" alt=""></a></div>
+<div class="content"><a href="#"><img src="images/yingyang.02_05.png" alt=""></a></div>
+<div class="content"><a href="#"><img src="images/yingyang.03_05.png" alt=""></a></div>
+<div class="content"><a href="#"><img src="images/yingyang.04_05.png" alt=""></a></div>
+<div class="content"><a href="#"><img src="images/connection.png" alt=""></a></div>
+<div class="content"><a href="#"><img src="images/shai_05.png" alt=""></a></div>
+
+
+<script src="js/jquery-1.10.1.js"></script>
+<script>
+    $(function() {
+        $('.close').click(function(){
+            window.close();
+        });
+        var imgWidth = $('.content img').eq(0).width();
+        $('.content img').height(imgWidth*0.54222);
+    });
+</script>
+</body>
+</html>
