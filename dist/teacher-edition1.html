@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"/>
+<title>教师版功能</title>
+<style>
+    * {
+        margin: 0 0;
+        padding: 0 0;
+        font-family: 'Microsoft YaHei', sans-serif;
+        outline: none;
+    }
+
+    a {
+        text-decoration: none;
+    }
+
+    html {
+        font-size: 14px;
+    }
+
+    body {
+        background: #d9f2df url("images/background.jpg?v=e45fc137f0") no-repeat;
+        background-size: 100% 100%;
+        padding: 2%;
+        min-height: 100vh;
+    }
+    .header{
+        padding:2% 2%;
+    }
+    .header .btn{
+        padding:5px 10px;
+        background: #379357;
+        border: 1px solid lawngreen;
+        color: white;
+        font-size: 1.4rem;
+    }
+    .header .btn-work{
+        float: right;
+    }
+    .header .btn-qiandao{
+        float: left;
+    }
+    table {
+        border-collapse: collapse;
+        width: 100%;
+        background: #c7e4d3;
+        font-size: 1.4rem;
+        margin-bottom:20px;
+        border: 1px solid green;
+    }
+    thead{
+        background: #7ac597;
+        line-height: 2;
+        text-align: left;
+    }
+    thead button{
+        display: block;
+        padding:3px 5px;
+        background: #379357;
+        border: 1px solid lawngreen;
+        color: white;
+        font-size: 1.2rem;
+        margin:0 auto;
+    }
+    tr{
+        height: 3rem;
+    }
+    tr.odd{
+        background: #b8e6be;
+    }
+    .checked,.border{
+        width: 2.5rem;
+        height: 2.5rem;
+        margin: 0 auto;
+    }
+    .checked{
+        background: url("images/qiandao-checked_05.png?v=25a10a9e7a?v=ed2141a863") no-repeat center;
+        background-size: 100% 100%;
+    }
+    .border{
+        background: url("images/qiandao-check_05.png?v=c6d69cef64?v=ba57c66ef7") no-repeat center;
+        background-size: 100% 100%;
+    }
+    .submit-banner{
+        /*position: fixed;*/
+        width: 100%;
+        height: 55px;
+        padding-top: 5px;
+        /*bottom: 0;*/
+        /*left:0;*/
+        background: #7ac597;
+    }
+    .btn-cancel,.btn-submit{
+        display: inline-block;
+        margin:20px 15%;
+        font-size: 1.4rem;
+        width: 50px;
+        height: 50px;
+        border-radius: 25px;
+        border: 2px solid greenyellow;
+        color: white;
+    }
+    .btn-submit{
+        float: right;
+        background: #009944;
+    }
+    .btn-cancel{
+        float: left;
+        background: #df1b49;
+    }
+    .classwork{
+        width: 90vw;
+        height: 90vh;
+        position: fixed;
+        top:5%;
+        left:5%;
+        background: #c7e4ce;
+        border: 2px solid #215533;
+        border-radius: 20px;
+        overflow: hidden;
+        display: none;
+    }
+    .classwork .title{
+        background: #379357;
+        line-height: 2;
+        text-align: center;
+    }
+    .classwork .text{
+        display: block;
+        margin:20px auto;
+        height: 50%;
+        width: 80%;
+
+    }
+    .submit-footer{
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+    }
+    .btn-qiandao-submit{
+        float: none;
+        display: block;
+        margin:0 auto;
+    }
+    .hide{
+        display: none;
+    }
+</style>
+</head>
+<body>
+<div class="header">
+    <button class="btn btn-work">布置作业</button>
+    <button class="btn btn-qiandao">签到</button>
+    <span>教师不操作默认签到，默认点评</span>
+</div>
+<div class="qiandao">
+    <table>
+        <thead>
+        <tr>
+            <th><button class="allCheck hide">全选</button><button class="allCancel">取消</button></th>
+            <th>姓名</th>
+            <th></th>
+            <th>姓名</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td><div class="checked"></div></td>
+            <td>周兴</td>
+            <td><div class="border"></div></td>
+            <td>李晓明</td>
+        </tr>
+        <tr>
+            <td><div class="checked"></div></td>
+            <td>周兴鹏</td>
+            <td><div class="border"></div></td>
+            <td>李晓明</td>
+        </tr>
+        <tr>
+            <td><div class="checked"></div></td>
+            <td>周兴鹏</td>
+            <td><div class="border"></div></td>
+            <td>李晓明</td>
+        </tr>
+        <tr>
+            <td><div class="checked"></div></td>
+            <td>周兴鹏</td>
+            <td><div class="border"></div></td>
+            <td>李晓明</td>
+        </tr>
+        <tr>
+            <td><div class="checked"></div></td>
+            <td>周兴鹏</td>
+            <td><div class="border"></div></td>
+            <td>李晓明</td>
+        </tr>
+        <tr>
+            <td><div class="checked"></div></td>
+            <td>周兴鹏</td>
+            <td><div class="border"></div></td>
+            <td>李晓明</td>
+        </tr>
+        <tr>
+            <td><div class="checked"></div></td>
+            <td>周兴鹏</td>
+            <td><div class="border"></div></td>
+            <td>李晓明</td>
+        </tr>
+        <tr>
+            <td><div class="checked"></div></td>
+            <td>周兴鹏</td>
+            <td><div class="border"></div></td>
+            <td>李晓明</td>
+        </tr>
+        <tr>
+            <td><div class="checked"></div></td>
+            <td>周兴鹏</td>
+            <td><div class="border"></div></td>
+            <td>李晓明</td>
+        </tr>
+        <tr>
+            <td><div class="checked"></div></td>
+            <td>周兴鹏</td>
+            <td><div class="border"></div></td>
+            <td>李晓明</td>
+        </tr>
+        <tr>
+            <td><div class="checked"></div></td>
+            <td>周兴鹏</td>
+            <td><div class="border"></div></td>
+            <td>李晓明</td>
+        </tr>
+
+        </tbody>
+    </table>
+    <div class="submit-banner">
+
+        <!--<button class="btn-cancel">取消</button>-->
+
+        <button class="btn-submit btn-qiandao-submit">提交</button>
+
+    </div>
+</div>
+
+<div class="classwork">
+    <h2 class="title">作业布置</h2>
+    <textarea class="text"></textarea>
+    <div class="submit-footer">
+
+        <button class="btn-cancel btn-work-cancel">取消</button>
+
+        <button class="btn-submit">提交</button>
+
+    </div>
+</div>
+<script src="js/jquery-1.10.1.js?v=852c9f3ab4"></script>
+<script>
+    $(function () {
+        //设置table间隔行背景色
+        $('tbody tr:odd').addClass('odd');
+        //设置点击切换选中图标
+        $('.checked').add('.border').click(function(){
+            var className = $(this).attr('class');
+            if(className=='checked')
+            {
+                $(this).attr('class','border');
+            }
+            else{
+                $(this).attr('class','checked');
+            }
+        });
+        //点击全选
+        $('.allCheck').click(function(){
+            $('.border').attr('class','checked');
+            $(this).addClass('hide');
+            $('.allCancel').removeClass('hide');
+        });
+        //点击全取消
+        $('.allCancel').click(function(){
+            $('.checked').attr('class','border');
+            $(this).addClass('hide');
+            $('.allCheck').removeClass('hide');
+        });
+        //点击布置作业，显示布置作业
+        $('.btn-work').click(function(){
+            $('.classwork').show('slow');
+            $('.qiandao').hide('slow');
+        });
+        //点击签到，显示签到界面
+        $('.btn-qiandao').click(function(){
+            $('.qiandao').show('slow');
+            $('.classwork').hide('slow');
+        });
+        //点击取消，隐藏弹窗
+        $('.btn-work-cancel').click(function(){
+            $('.classwork').hide('slow');
+            $('.classwork .text').val('');
+        });
+    });
+</script>
+</body>
+</html>

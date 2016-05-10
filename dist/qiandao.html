@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"/>
+    <title>签到管理</title>
+    <style>
+        * {
+            margin: 0 0;
+            padding: 0 0;
+            font-family: 'Microsoft YaHei', sans-serif;
+            outline: none;
+        }
+        a{
+            text-decoration: none;
+        }
+        html {
+            font-size: 14px;
+        }
+
+        body {
+            background: #d9f2df url("images/background.jpg?v=e45fc137f0") no-repeat;
+            background-size: 100% 100%;
+            padding:2%;
+        }
+        p{
+            font-size: 1.5rem;
+            color: orange;
+            line-height: 4rem;
+            padding-left: 1rem;
+        }
+        p .cishu{
+            font-size: 3rem;
+            color:red;
+            font-weight: bold;
+            vertical-align: middle;
+            text-shadow:#fff 1px 0 0,#fff 0 1px 0,#fff -1px 0 0,#fff 0 -1px 0;
+        }
+        p img{
+            height: 2rem;
+            vertical-align: middle;
+        }
+        .btn{
+            width: 50%;
+            margin:5% auto;
+        }
+        .btn button{
+            background: none;
+            border: none;
+        }
+        .btn button img{
+            width: 100%;
+        }
+        table{
+            width: 100%;
+            border-collapse:collapse;
+            background: #f0f8e9;
+            text-align: center;
+        }
+        th,td{
+            border: 1px solid orange;
+            padding:5% 0;
+        }
+        .title{
+            font-size: 2rem;
+            color: #31d3ff;
+            font-weight: 500;
+        }
+        .head,tbody{
+            color: orange;
+        }
+        td.yiqian{
+            background: url("images/fengche_05.png?v=c6705d72b6") no-repeat center;
+            background-size: 90% auto;
+        }
+        td.weiqian{
+            background: url("images/fengche-grey_05.png?v=4aad4dd84a") no-repeat center;
+            background-size: 90% auto;
+        }
+        .hidden{
+            visibility: hidden;
+        }
+    </style>
+</head>
+<body>
+<p>本月累计签到<span class="cishu">25</span>次</p>
+<p>获得<span class="geshu">25</span>小风车<img src="images/fengche_05.png?v=c6705d72b6" alt="xiaofengche" /></p>
+<div class="btn">
+    <button><img src="images/btn-qiandao_05.png?v=ed2bf09ee3" alt="qiandao" /></button>
+</div>
+<table class="date">
+    <thead>
+    <tr><th colspan="7" class="title">2015年03月</th></tr>
+    <tr class="head">
+        <th>日</th>
+        <th>一</th>
+        <th>二</th>
+        <th>三</th>
+        <th>四</th>
+        <th>五</th>
+        <th>六</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <!--签到时，向对应的表格单元td添加class，yiqian为彩色风车，weiqin为灰色风车，然后向单元格中的span添加class“hidden”-->
+        <td class="yiqian"><span class="hidden">1</span></td>
+        <td class="yiqian"><span class="hidden">2</span></td>
+        <td class="yiqian"><span class="hidden">3</span></td>
+        <td class="yiqian"><span class="hidden">4</span></td>
+        <td class="yiqian"><span class="hidden">5</span></td>
+        <td class="yiqian"><span class="hidden">6</span></td>
+        <td class="yiqian"><span class="hidden">7</span></td>
+    </tr>
+    <tr>
+        <td class="weiqian"><span class="hidden">8</span></td>
+        <td class="weiqian"><span class="hidden">9</span></td>
+        <td class="weiqian"><span class="hidden">10</span></td>
+        <td class="weiqian"><span class="hidden">11</span></td>
+        <td class="weiqian"><span class="hidden">12</span></td>
+        <td class="weiqian"><span class="hidden">13</span></td>
+        <td class="weiqian"><span class="hidden">14</span></td>
+    </tr>
+    <tr>
+        <td class="yiqian"><span class="hidden">15</span></td>
+        <td class="yiqian"><span class="hidden">16</span></td>
+        <td class="yiqian"><span class="hidden">17</span></td>
+        <td class="yiqian"><span class="hidden">18</span></td>
+        <td class="yiqian"><span class="hidden">19</span></td>
+        <td class="yiqian"><span class="hidden">20</span></td>
+        <td class="yiqian"><span class="hidden">21</span></td>
+    </tr>
+    <tr>
+        <td class="weiqian"><span class="hidden">22</span></td>
+        <td class="weiqian"><span class="hidden">23</span></td>
+        <td class="weiqian"><span class="hidden">24</span></td>
+        <td class="yiqian"><span class="hidden">25</span></td>
+        <td class="yiqian"><span class="hidden">26</span></td>
+        <td class="yiqian"><span class="hidden">27</span></td>
+        <td>28</td>
+    </tr>
+    <tr>
+        <td>29</td>
+        <td>30</td>
+        <td>31</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+    </tbody>
+</table>
+
+</body>
+</html>
