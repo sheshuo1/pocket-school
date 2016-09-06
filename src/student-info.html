@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"/>
+    <title>学生信息</title>
+    <style>
+        * {
+            margin: 0 0;
+            padding: 0 0;
+            font-family: 'Microsoft YaHei', sans-serif;
+            outline: none;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        html {
+            font-size: 14px;
+        }
+
+        body {
+            background: #d9f2df url("images/background.jpg") no-repeat;
+            background-size: 100% 100%;
+            padding: 2%;
+            min-height: 90vh;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            background: #c7e4d3;
+            font-size: 1.4rem;
+            border: 1px solid green;
+            text-align: center;
+        }
+        thead{
+            background: #7ac597;
+            line-height: 2;
+
+        }
+        tbody .btn-name{
+            display: block;
+            padding:3px 0;
+            background: #379357;
+            border: 1px solid lawngreen;
+            color: white;
+            font-size: 1.2rem;
+            margin:0 auto;
+            width: 5em;
+        }
+        tr{
+            height: 3rem;
+        }
+        tr:nth-child(even){
+            background: #b8e6be;
+        }
+        .main{
+            width: 90%;
+            background: #c7e4ce;
+            border: 1px solid green;
+            border-radius: 10px;
+            overflow: hidden;
+            position: absolute;
+            top:5%;
+            left:5%;
+            display: none;
+        }
+        .main h1{
+            text-align: center;
+            background: #379357;
+            line-height: 1.5;
+        }
+        .main table{
+            border-collapse:collapse;
+            width: 90%;
+            margin:5% auto;
+            text-align: center;
+            font-size: 1rem;
+        }
+        .main table th,.main table td{
+            border: 1px solid green;
+            height: 3rem;
+        }
+        .main table th{
+            min-width: 5em;
+        }
+
+        .submit-footer{
+
+            width: 100%;
+        }
+        .btn-cancel{
+            display: inline-block;
+            margin:5px 15%;
+            font-size: 1.4rem;
+            width: 50px;
+            height: 50px;
+            border-radius: 25px;
+            border: 2px solid greenyellow;
+            color: white;
+        }
+
+
+        .btn-cancel{
+            display: block;
+            margin-left:auto;
+            margin-right: auto;
+            background: #df1b49;
+        }
+
+    </style>
+</head>
+<body>
+<div class="qiandao">
+    <span>点击学生姓名，可查看学生信息详情</span>
+
+    <table>
+        <thead>
+        <tr>
+
+            <th>姓名</th>
+
+            <th>姓名</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td><button class="btn-name">周兴</button></td>
+            <td><button class="btn-name">李晓明</button></td>
+        </tr>
+        <tr>
+            <td><button class="btn-name">周兴</button></td>
+            <td><button class="btn-name">李晓明</button></td>
+        </tr>
+        <tr>
+            <td><button class="btn-name">周兴</button></td>
+            <td><button class="btn-name">李晓明</button></td>
+        </tr>
+        <tr>
+            <td><button class="btn-name">周兴</button></td>
+            <td><button class="btn-name">李晓明</button></td>
+        </tr>
+        <tr>
+            <td><button class="btn-name">周兴</button></td>
+            <td><button class="btn-name">李晓明</button></td>
+        </tr>
+        <tr>
+            <td><button class="btn-name">周兴</button></td>
+            <td><button class="btn-name">李晓明</button></td>
+        </tr>
+        <tr>
+            <td><button class="btn-name">周兴</button></td>
+            <td><button class="btn-name">李晓明</button></td>
+        </tr>
+        <tr>
+            <td><button class="btn-name">周兴</button></td>
+            <td><button class="btn-name">李晓明</button></td>
+        </tr>
+        <tr>
+            <td><button class="btn-name">周兴</button></td>
+            <td><button class="btn-name">李晓明</button></td>
+        </tr>
+        <tr>
+            <td><button class="btn-name">周兴</button></td>
+            <td><button class="btn-name">李晓明</button></td>
+        </tr>
+        <tr>
+            <td><button class="btn-name">周兴</button></td>
+            <td><button class="btn-name">李晓明</button></td>
+        </tr>
+        <tr>
+            <td><button class="btn-name">周兴</button></td>
+            <td><button class="btn-name">李晓明</button></td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+<div class="main">
+    <h1> </h1> <img class="btn-del" src="images/delete.png" alt="" style="position: absolute;top:6px;right:6px;width:30px;height: 30px;">
+    <table>
+        <tbody>
+        <tr>
+            <th>姓名</th>
+            <td>
+                周桂文
+            </td>
+        </tr>
+        <tr>
+            <th>账号</th>
+            <td>
+                mx201612
+            </td>
+        </tr>
+        <tr>
+            <th>性别</th>
+            <td>
+                男
+            </td>
+        </tr>
+        <tr>
+            <th>民族</th>
+            <td>哈撒斯坦族</td>
+        </tr>
+        <tr>
+            <th>出生日期</th>
+            <td>
+                2000/03/14
+            </td>
+        </tr>
+        <tr>
+            <th>家长</th>
+            <td>
+                周涛
+            </td>
+        </tr>
+        <tr>
+            <th>联系电话</th>
+            <td>
+                14087596542
+            </td>
+        </tr>
+        <tr>
+            <th>家庭住址</th>
+            <td>广西南宁市青秀区大庄街58-2号</td>
+        </tr>
+        <tr>
+            <th>积分</th>
+            <td>
+                52
+            </td>
+        </tr>
+        </tbody>
+    </table>
+    <div class="submit-footer">
+
+        <button class="btn-cancel btn-work-cancel">关闭</button>
+
+
+    </div>
+</div>
+<script src="js/jquery-1.10.1.js"></script>
+<script>
+    $(function () {
+
+        //点击学生姓名，弹出点评框
+        $('.btn-name').click(function(){
+            $('.main h1').html($(this).html());
+            $('.main').show('fast');
+        });
+        //点击取消按钮，隐藏点评框,并取消所有已经选中的复选框
+        $('.btn-cancel').add('.btn-del').click(function () {
+            $('.main').hide('fast');
+        });
+    });
+</script>
+</body>
+</html>
