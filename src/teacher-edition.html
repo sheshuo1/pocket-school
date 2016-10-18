@@ -94,6 +94,87 @@
         textarea{
             font-size:16px;
         }
+        .choose-area{
+            padding: 5px 10%;
+        }
+        .choose-area p{
+            line-height: 20px;
+        }
+        .choose-area p span{
+            padding-left: 10px;
+        }
+        .btn-choose{
+            background: #379357;
+            border: 2px solid greenyellow;
+            margin:5px 0;
+            padding:3px;
+            color:white;
+            font-size: 16px;
+        }
+        .choose-class-area,.choose-subject-area{
+            width: 90%;
+            position: absolute;
+            left:5%;
+            top:5%;
+            display: none;
+        }
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            background: #c7e4d3;
+            font-size: 1.4rem;
+            border: 1px solid green;
+            margin-bottom: 10px;
+        }
+        thead{
+            background: #7ac597;
+            line-height: 2;
+            text-align: left;
+        }
+        thead button{
+            display: block;
+            padding:3px 5px;
+            background: #379357;
+            border: 1px solid lawngreen;
+            color: white;
+            font-size: 1.2rem;
+            margin:0 auto;
+        }
+        tr{
+            height: 3rem;
+        }
+        tr.grade-line{
+            background: darkgreen !important;
+        }
+        tr.odd{
+            background: #b8e6be;
+        }
+        td{
+            text-align: center;
+        }
+        .checked,.border{
+            width: 2.5rem;
+            height: 2.5rem;
+            margin: 0 auto;
+        }
+        .checked{
+            background: url("images/qiandao-checked_05.png") no-repeat center;
+            background-size: 100% 100%;
+        }
+        .border{
+            background: url("images/qiandao-check_05.png") no-repeat center;
+            background-size: 100% 100%;
+        }
+        .modal{
+            height:100%;
+            background: rgba(0,0,0,0);
+            display: none;
+            z-index: 100;
+        }
+        .modal table{
+            position: absolute;
+            top:20%;
+        }
     </style>
 </head>
 <body>
@@ -105,6 +186,10 @@
 
 <div class="classwork">
     <h2 class="title">作业布置</h2>
+    <div class="choose-area">
+        <p><button class="btn-choose btn-choose-class">选择班级</button><span class="txt-chooseClass">一年级一班</span></p>
+        <p><button class="btn-choose btn-choose-subject">选择科目</button><span class="txt-chooseSubject">英语</span></p>
+    </div>
     <textarea class="text"></textarea>
     <div class="submit-footer">
 
@@ -113,6 +198,108 @@
         <button class="btn-submit">提交</button>
 
     </div>
+</div>
+
+<div class="choose-class-area modal">
+    <table>
+        <thead>
+        <tr>
+            <th><button class="cancel">取消</button></th>
+            <th><button class="submit">确定</button></th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr class="grade-line">
+            <td>一年级</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><div class="border"></div></td>
+            <td>一班</td>
+        </tr>
+        <tr>
+            <td><div class="border"></div></td>
+            <td>二班</td>
+        </tr>
+        <tr>
+            <td><div class="border"></div></td>
+            <td>三班</td>
+        </tr>
+        <tr>
+            <td><div class="border"></div></td>
+            <td>四班</td>
+        </tr>
+        <tr class="grade-line">
+            <td>二年级</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><div class="border"></div></td>
+            <td>一班</td>
+        </tr>
+        <tr>
+            <td><div class="border"></div></td>
+            <td>二班</td>
+        </tr>
+        <tr>
+            <td><div class="border"></div></td>
+            <td>三班</td>
+        </tr>
+        <tr>
+            <td><div class="border"></div></td>
+            <td>四班</td>
+        </tr>
+        <tr class="grade-line">
+            <td>三年级</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><div class="border"></div></td>
+            <td>一班</td>
+        </tr>
+        <tr>
+            <td><div class="border"></div></td>
+            <td>二班</td>
+        </tr>
+        <tr>
+            <td><div class="border"></div></td>
+            <td>三班</td>
+        </tr>
+        <tr>
+            <td><div class="border"></div></td>
+            <td>四班</td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+<div class="choose-subject-area modal">
+    <table>
+        <thead>
+        <tr>
+            <th><button class="cancel">取消</button></th>
+            <th><button class="submit">确定</button></th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td><div class="border"></div></td>
+            <td>语文</td>
+        </tr>
+        <tr>
+            <td><div class="border"></div></td>
+            <td>数学</td>
+        </tr>
+        <tr>
+            <td><div class="border"></div></td>
+            <td>英语</td>
+        </tr>
+        <tr>
+            <td><div class="border"></div></td>
+            <td>体育</td>
+        </tr>
+        </tbody>
+    </table>
 </div>
 <script src="js/jquery-1.10.1.js"></script>
 <script>
@@ -129,6 +316,48 @@
             $('.classwork').hide('fast');
             $('.classwork .text').val('');
             $('.header').show('fast');
+        });
+
+        //点击选择班级，显示班级界面
+        $('.btn-choose-class').click(function(){
+            $('.choose-class-area').show('fast');
+        });
+        //点击取消，清空选择，关闭班级界面
+        $('.choose-class-area .cancel,.choose-class-area .submit').click(function(){
+            $('.choose-class-area').hide('fast').find('.checked').attr('class','border');
+        });
+        //点击选择科目，显示科目界面
+        $('.btn-choose-subject').click(function(){
+            $('.choose-subject-area').show('fast');
+        });
+        //点击取消，清空选择，关闭科目界面
+        $('.choose-subject-area .cancel,.choose-subject-area .submit').click(function(){
+            $('.choose-subject-area').hide('fast').find('.checked').attr('class','border');
+        });
+        //设置table间隔行背景色
+        $('tbody tr:odd').addClass('odd');
+        //设置点击切换选中图标
+        $('.choose-class-area .checked,.choose-class-area .border').click(function(){
+            var className = $(this).attr('class');
+            if(className=='checked')
+            {
+                $(this).attr('class','border');
+            }
+            else{
+                $(this).attr('class','checked');
+            }
+        });
+        //选择科目，设置点击切换选中图标，并重置其他按钮
+        $('.choose-subject-area .checked,.choose-subject-area .border').click(function(){
+            var className = $(this).attr('class');
+            if(className=='checked')
+            {
+                $(this).attr('class','border');
+            }
+            else{
+                $(this).attr('class','checked');
+            }
+            $('.choose-subject-area .checked,.choose-subject-area .border').not(this).attr('class','border');
         });
 
     });
