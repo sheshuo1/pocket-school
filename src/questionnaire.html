@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"/>
+    <title>调查问卷</title>
+    <style>
+        html{
+            font-size: 16px;
+            background: #d9f2df;
+        }
+        h1{
+            text-align: center;
+        }
+        ol li{
+            font-size: 1rem;
+            padding:0.5rem 0;
+            line-height: 1.5rem;
+        }
+        textarea{
+            height: 6rem;
+            font-size: 1rem;
+            width: 90%;
+        }
+        input[type="radio"]:checked + span{
+            background: #68e484;
+        }
+        input[type="submit"]{
+            width: 100%;
+            height: 3rem;
+            border: none;
+            font-size: 2rem;
+            color:white;
+            background: #ccc;
+            outline: none;
+        }
+        input[type="submit"]:active{
+            color: #68e484;
+        }
+    </style>
+</head>
+<body>
+<h1>用户调查问卷</h1>
+<form name="questions" action="#" method="get">
+    <ol>
+        <li>
+            您是怎么知道青苗口袋小学这个软件的?<br>
+            <label><input type="radio" name="1" value="1"><span>A.学校宣传</span><br></label>
+            <label><input type="radio" name="1" value="2"><span>B.网站</span><br></label>
+            <label><input type="radio" name="1" value="3"><span>C.微信</span><br></label>
+            <label><input type="radio" name="1" value="4"><span>D.电视</span><br></label>
+        </li>
+        <li>
+            您是通过什么渠道下载《青苗—口袋小学》APP的？<br>
+            <label><input type="radio" name="2" value="1"><span>A.宣传页二维码</span><br></label>
+            <label><input type="radio" name="2" value="2"><span>B.应用商店下载</span><br></label>
+            <label><input type="radio" name="2" value="3"><span>C.其他用户下载的安装包</span><br></label>
+            <label><input type="radio" name="2" value="4"><span>D.其他</span><br></label>
+        </li>
+        <li>
+            您使用这款软件的初衷是什么？<br>
+            <label><input type="radio" name="3" value="1"><span>A.为了更了解学生的在校情况</span><br></label>
+            <label><input type="radio" name="3" value="2"><span>B.喜欢它的育儿内容</span><br></label>
+            <label><input type="radio" name="3" value="3"><span>C.方便与教师沟通</span><br></label>
+            <label><input type="radio" name="3" value="4"><span>D.其他</span><br></label>
+        </li>
+        <li>
+            您使用的频率是？<br>
+            <label><input type="radio" name="4" value="1"><span>A.一天一次</span><br></label>
+            <label><input type="radio" name="4" value="2"><span>B.一天多次</span><br></label>
+            <label><input type="radio" name="4" value="3"><span>C.一周多次</span><br></label>
+            <label><input type="radio" name="4" value="4"><span>D.一周一次或更少</span><br></label>
+            <label><input type="radio" name="4" value="5"><span>E.其他</span><br></label>
+        </li>
+        <li>
+            您最常用的功能是？<br>
+            <label><input type="radio" name="5" value="1"><span>A.课程表</span><br></label>
+            <label><input type="radio" name="5" value="2"><span>B.学生签到</span><br></label>
+            <label><input type="radio" name="5" value="3"><span>C.学校新闻与通知</span><br></label>
+            <label><input type="radio" name="5" value="4"><span>D.积分抽奖兑换</span><br></label>
+            <label><input type="radio" name="5" value="5"><span>E.其他</span><br></label>
+        </li>
+        <li>
+            您觉得这款软件使用起来是否稳定？<br>
+            <label><input type="radio" name="6" value="1"><span>A.十分稳定</span><br></label>
+            <label><input type="radio" name="6" value="2"><span>B.比较稳定</span><br></label>
+            <label><input type="radio" name="6" value="3"><span>C.不太稳定</span><br></label>
+        </li>
+        <li>
+            您觉得软件界面是否美观？<br>
+            <label><input type="radio" name="7" value="1"><span>A.非常美观</span><br></label>
+            <label><input type="radio" name="7" value="2"><span>B.比较美观</span><br></label>
+            <label><input type="radio" name="7" value="3"><span>C.一般</span><br></label>
+            <label><input type="radio" name="7" value="4"><span>D.其他</span><br></label>
+        </li>
+        <li>
+            您觉得软件操作是否复杂？<br><span>
+            <label><input type="radio" name="8" value="1"><span>A.操作简单</span><br></label>
+            <label><input type="radio" name="8" value="2"><span>B.还好</span><br></label>
+            <label><input type="radio" name="8" value="3"><span>C.操作复杂</span><br></label>
+            <label><input type="radio" name="8" value="4"><span>D.经过学习后容易掌握</span><br></label>
+        </li>
+        <li>
+            您觉得这款软件是否有助于帮助您更了解学生的学习情况？<br>
+            <label><input type="radio" name="9" value="1"><span>A.非常有帮助</span><br></label>
+            <label><input type="radio" name="9" value="2"><span>B.有帮助</span><br></label>
+            <label><input type="radio" name="9" value="3"><span>C.没有帮助</span><br></label>
+            <label><input type="radio" name="9" value="4"><span>D.其他</span><br></label>
+        </li>
+        <li>
+            后期软件提供心智健康安全教育有偿服务，您是否支持？<br>
+            <label><input type="radio" name="10" value="1"><span>A.非常支持</span><br></label>
+            <label><input type="radio" name="10" value="2"><span>B.支持</span><br></label>
+            <label><input type="radio" name="10" value="3"><span>C.不支持</span><br></label>
+            <label><input type="radio" name="10" value="4"><span>D.随意</span><br></label>
+        </li>
+        <li><span>
+            口袋小学将推出校园商城提供折扣教育用品网购，您是否感兴趣?<br>
+            <label><input type="radio" name="11" value="1"><span>A.非常感兴趣</span><br></label>
+            <label><input type="radio" name="11" value="2"><span>B.感兴趣</span><br></label>
+            <label><input type="radio" name="11" value="3"><span>C.不感兴趣</span><br></label>
+            <label><input type="radio" name="11" value="4"><span>D.一般</span><br></label>
+        </li>
+        <li>
+            如果这款软件要收年费，您觉得以下价格多少合适？<br>
+            <label><input type="radio" name="12" value="1"><span>A.一年20-50</span><br></label>
+            <label><input type="radio" name="12" value="2"><span>B.一年50-80</span><br></label>
+            <label><input type="radio" name="12" value="3"><span>C.一年80—110</span><br></label>
+            <label><input type="radio" name="12" value="4"><span>D.一年110以上</span><br></label>
+        </li>
+        <li>
+            如果这款软件需要收费，您还会继续使用吗？<br>
+            <label><input type="radio" name="13" value="1"><span>A.会</span><br></label>
+            <label><input type="radio" name="13" value="2"><span>B.不会</span><br></label>
+            <label><input type="radio" name="13" value="3"><span>C.看情况</span><br></label>
+        </li>
+        <li>
+            您对这款软件是否满意？<br>
+            <label><input type="radio" name="14" value="1"><span>A.非常满意</span><br></label>
+            <label><input type="radio" name="14" value="2"><span>B.满意</span><br></label>
+            <label><input type="radio" name="14" value="3"><span>C.一般</span><br></label>
+            <label><input type="radio" name="14" value="4"><span>D.不满意</span><br></label>
+        </li>
+        <li>
+            您在使用时，遇到过哪些问题？有什么意见和建议？<br>
+            <textarea name="15"></textarea><br>
+        </li>
+    </ol>
+
+    <input type="submit" name="submit" value="提交">
+</form>
+</body>
+</html>
