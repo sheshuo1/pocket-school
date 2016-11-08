@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"/>
+    <title>发送短息验证码</title>
+    <style>
+        * {
+            margin: 0 0;
+            padding: 0 0;
+            font-family: 'Microsoft YaHei', sans-serif;
+            outline: none;
+            box-sizing: border-box;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        html {
+            font-size: 14px;
+            background: #e6e6e6;
+        }
+
+        form.send-message-form{
+            color:#808080;
+            font-size: 1.2rem;
+        }
+        p{
+            padding-left: 1.2rem;
+            margin: 1.2rem 0;
+        }
+        input[type="text"]{
+            width: 100%;
+            line-height: 3rem;
+            font-size: 1.2rem;
+            padding-left: 1em;
+            border: 1px solid #ccc;
+            border-left: none;
+            border-right: none;
+        }
+        .input-yanzhengma input[type="text"]{
+            width: 70%;
+            vertical-align: middle;
+        }
+        .input-yanzhengma input[type="button"]{
+            width: 30%;
+            line-height: 3rem;
+            vertical-align: middle;
+            border: 1px solid #ccc;
+            border-right: none;
+            background: white;
+            color: #0079ff;
+        }
+        input[type="submit"]{
+            display: block;
+            margin:1em auto;
+            width: 90%;
+            font-size: 1.5rem;
+            color:white;
+            background:#0079ff;
+            line-height: 2em;
+            border: none;
+            border-radius: 5px;
+        }
+        p.change-method{
+            font-size: 1rem;
+        }
+    </style>
+</head>
+<body>
+<form class="send-message-form" action="change-password.html">
+    <p>您的密保手机号为135******45，请点击按钮发送验证码</p>
+
+    <div class="input-yanzhengma">
+        <input type="text" placeholder="请输入验证码"><input type="button" value="点击发送短信" class="btn-yanzhengma">
+    </div>
+    <input type="submit" value="确定">
+    <p class="change-method"><a href="#">短信用不了？请更换其他验证方式</a></p>
+</form>
+
+<script>
+    document.querySelector('.btn-yanzhengma').addEventListener('click',function () {
+        this.value="正在发送(60s)";
+        this.style.color="#ccc";
+        window.time=60;
+        var daojishi=setInterval(function () {
+            console.log(this);
+            if(time>0){
+                time--;
+                document.querySelector('.btn-yanzhengma').value="正在发送("+time+"s)";
+            }else{
+                clearInterval(daojishi);
+                document.querySelector('.btn-yanzhengma').value="点击发送短信";
+                document.querySelector('.btn-yanzhengma').style.color="#0079ff";
+            }
+        },1000);
+    })
+</script>
+</body>
+</html>
