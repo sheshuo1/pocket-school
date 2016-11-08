@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"/>
+    <title>编辑短信验证</title>
+    <style>
+        * {
+            margin: 0 0;
+            padding: 0 0;
+            font-family: 'Microsoft YaHei', sans-serif;
+            outline: none;
+            box-sizing: border-box;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        html {
+            font-size: 14px;
+            background: #e6e6e6;
+        }
+
+        p{
+            padding-left: 1.2rem;
+            margin: 1.2rem 0;
+        }
+        table{
+            width: 100%;
+            border: none;
+            border-top: 1px solid #ccc;
+            border-bottom: 1px solid #ccc;
+            background: white;
+            font-size: 1.2rem;
+            border-collapse: collapse;
+        }
+        tr:first-of-type{
+            border-bottom:1px solid #eee ;
+        }
+        td{
+            font-size: 1.2rem;
+            text-align: left;
+            line-height: 2.5em;
+        }
+        td.td-title{
+            width: 30%;
+            text-align: center;
+            color:#aaa;
+        }
+
+        button{
+            display: block;
+            margin:1em auto 0 auto;
+            width: 90%;
+            font-size: 1.5rem;
+            color:white;
+            background:#0079ff;
+            line-height: 2em;
+            border: none;
+            border-radius: 5px;
+        }
+        button.btn-fast{
+            border: 2px solid #0079ff;
+            background: white;
+            color:#0079ff;
+        }
+        p.info{
+            font-size: 1rem;
+            color: #aaa;
+            margin-top:5px;
+        }
+    </style>
+</head>
+<body>
+
+    <p>请先用您的密保手机135******45发短信，然后点击“我已发送”按钮：</p>
+    <table>
+        <tr>
+            <td class="td-title">发短信：</td>
+            <td>找回密码2725</td>
+        </tr>
+        <tr>
+            <td class="td-title">到号码：</td>
+            <td>1999547258</td>
+        </tr>
+    </table>
+
+    <button class="btn-fast">快速发送</button>
+    <p class="info">如果浏览器不支持快速发送短信，请手动发送短信。</p>
+    <a href="change-password.html"><button>我已发送</button></a>
+    <p class="info">短信一般为0.1元/条，全部由运营商收取。</p>
+    <p class="info"><a href="#">短信用不了？请更换其他验证方式</a></p>
+
+
+<script>
+
+</script>
+</body>
+</html>
