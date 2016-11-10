@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"/>
+    <title>荣誉榜</title>
+    <style>
+        * {
+            margin: 0 0;
+            padding: 0 0;
+            font-family: 'Microsoft YaHei', sans-serif;
+            outline: none;
+            box-sizing: border-box;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        html {
+            font-size: 14px;
+            background: #d9f2df url("images/background.jpg") no-repeat;
+        }
+        body{
+            padding:0 1rem 1rem 1rem;
+        }
+        .choose-area table{
+            margin:1rem 0;
+            padding:0 1rem;
+            width: 100%;
+        }
+        .choose-area table td{
+            width: 50%;
+            text-align: center;
+            height: 3rem;
+            padding:5px;
+        }
+        select{
+            width: 100%;
+            height: 100%;
+            background: #c7e4d3;
+            border: 1px solid #2b542c;
+        }
+        .show-list table{
+            width: 100%;
+            text-align: center;
+            border: 2px solid green;
+            border-collapse: collapse;
+            font-size: 1.2rem;
+            background: #c7e4d3;
+            background: white;
+
+        }
+        .show-list thead{
+            background: #7ac597;
+            border: none;
+            color: white;
+        }
+        .show-list th,.show-list td{
+            padding:5px 0;
+            height: 2.5rem;
+            font-size: 1rem;
+        }
+        .show-list th,.show-list td{
+             border-right:1px solid green ;
+         }
+        .show-list tr{
+            border-bottom:1px solid green;
+        }
+        .show-list tr:nth-of-type(even){
+            background: #b8e6be;
+        }
+    </style>
+</head>
+<body>
+<div class="choose-area">
+    <table>
+        <tr>
+            <td>
+                <select name="nianji">
+                    <option value="volvo">请选择年级</option>
+                    <option value="saab">一年级</option>
+                    <option value="fiat">二年级</option>
+                    <option value="audi">三年级</option>
+                    <option value="audi">四年级</option>
+                    <option value="audi">五年级</option>
+                </select>
+            </td>
+            <td>
+                <select name="xueqi">
+                    <option value="volvo">请选择学期</option>
+                    <option value="saab">秋季学期</option>
+                    <option value="fiat">春季学期</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <select name="rongyu">
+                    <option value="volvo">请选择要查看的荣誉</option>
+                    <option value="saab">三好学生</option>
+                    <option value="fiat">优秀班干</option>
+                    <option value="audi">进步学生</option>
+                </select>
+            </td>
+        </tr>
+    </table>
+</div>
+<div class="show-list">
+    <table>
+        <thead>
+        <tr>
+            <th>序号</th>
+            <th>姓名</th>
+            <th>年级</th>
+            <th>班级</th>
+            <th>荣誉</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>1</td>
+            <td>李瑞雪</td>
+            <td>一年级</td>
+            <td>一班</td>
+            <td>年级三好学生</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>李瑞雪</td>
+            <td>一年级</td>
+            <td>一班</td>
+            <td>年级三好学生</td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>李瑞雪</td>
+            <td>一年级</td>
+            <td>一班</td>
+            <td>年级三好学生</td>
+        </tr>
+        <tr>
+            <td>4</td>
+            <td>李瑞雪</td>
+            <td>一年级</td>
+            <td>一班</td>
+            <td>年级三好学生</td>
+        </tr>
+        <tr>
+            <td>4</td>
+            <td>李瑞雪</td>
+            <td>一年级</td>
+            <td>一班</td>
+            <td>年级三好学生</td>
+        </tr>
+        <tr>
+            <td>4</td>
+            <td>李瑞雪</td>
+            <td>一年级</td>
+            <td>一班</td>
+            <td>年级三好学生</td>
+        </tr>
+        <tr>
+            <td>4</td>
+            <td>李瑞雪</td>
+            <td>一年级</td>
+            <td>一班</td>
+            <td>年级三好学生</td>
+        </tr>
+        <tr>
+            <td>4</td>
+            <td>李瑞雪</td>
+            <td>一年级</td>
+            <td>一班</td>
+            <td>年级三好学生</td>
+        </tr>
+        <tr>
+            <td>4</td>
+            <td>李瑞雪</td>
+            <td>一年级</td>
+            <td>一班</td>
+            <td>年级三好学生</td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+</body>
+</html>
