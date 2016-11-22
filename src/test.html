@@ -18,15 +18,15 @@
 </head>
 <body>
 <div class="baguetteBox">
-    <img class="img" src="images/letter-logo-new.png" alt="" title="第一张图片描述">
-    <img class="img" src="images/connection.png" alt="" title="第二张图片描述">
-    <img class="img" src="images/happy_02.png" alt="" title="第三张图片描述">
-    <img class="img" src="images/shai_05.png" alt="">
-    <img class="img" src="images/shop-1.png" alt="">
-    <img class="img" src="images/shop-2.png" alt="">
+    <img class="img" src="images/loading_2.gif" data-src="images/letter-logo-new.png" alt="" title="第一张图片描述">
+    <img class="img" src="images/loading_2.gif" data-src="images/connection.png" alt="" title="第二张图片描述">
+    <img class="img" src="images/loading_2.gif" data-src="images/happy_02.png" alt="" title="第三张图片描述">
+    <img class="img" src="images/loading_2.gif" data-src="images/shai_05.png" alt="">
+    <img class="img" src="images/loading_2.gif" data-src="images/shop-1.png" alt="">
+    <img class="img" src="images/loading_2.gif" data-src="images/shop-2.png" alt="">
 </div>
 
-<script>
+<!--<script>
     $(function(){
         imgBox('.baguetteBox');
     });
@@ -84,6 +84,31 @@ function imgBox(selector){
         $(this).css('top', e.y+dy+'px');
     })*/
 }
+</script>-->
+
+
+<script>
+    function LoadImg(img_dom) {
+        this.src=img_dom.getAttribute('data-src');
+        this.loadimg=function () {
+            var img_real=document.createElement('img');
+            img_real.src=this.src;
+            img_real.addEventListener('load',function () {
+                img_dom.src=this.src;
+                img_real=null;
+            })
+        }
+    }
+    (function () {
+        window.addEventListener('load',function () {
+            var img_list=document.querySelectorAll('img[data-src]');
+            for(var i=0;i<img_list.length;i++){
+                var loadImg = new LoadImg(img_list[i]);
+                loadImg.loadimg();
+                loadImg=null;
+            }
+        })
+    })();
 </script>
 </body>
 </html>
