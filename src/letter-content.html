@@ -35,10 +35,67 @@
         }
         .main{
             position: absolute;
-            padding:5%;
+            padding:5% 5% 50px 5%;
             line-height: 2;
         }
-
+        button.btn-reply,button.btn-reply-submit{
+            display: block;
+            width: 100%;
+            line-height: 2;
+            font-size: 20px;
+            color: white;
+            border: none;
+            background: #379357;
+        }
+        button.btn-reply{
+            position: fixed;
+            bottom: 0;
+        }
+        .modal{
+            width: 100%;
+            height: 1000px;
+            background: rgba(0,0,0,0.8);
+            position: fixed;
+            top:0;
+            left:0;
+            display: none;
+            z-index: 100;
+        }
+        .reply-content{
+            position: absolute;
+            top: 30px;
+            left: 5%;
+            width: 90%;
+            background: #c7e4ce;
+            border-radius: 10px;
+            overflow: hidden;
+            z-index: 101;
+            display: none;
+        }
+        .reply-content h1{
+            position: relative;
+            font-size: 24px;
+            line-height: 1.5;
+            margin-bottom: 10px;
+            background: #379357;
+            color: white;
+            text-align: center;
+        }
+        .reply-content h1 img{
+            position: absolute;
+            right: 3px;
+            top: 3px;
+        }
+        .reply-content p,.reply-content label{
+            margin-left: 5%;
+            margin-bottom: 10px;
+        }
+        .reply-content textarea{
+            display: block;
+            width: 90%;
+            margin: 10px auto;
+            height: 250px;
+        }
     </style>
 </head>
 <body>
@@ -49,10 +106,33 @@
     <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;你们好！感谢您对学校工作的理解和支持！ </p>
     <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;英国作家萨克雷说：播种一种行为，收获一种习惯； 播种一种习惯，收获一种性格；播种一种性格，收获一种命运。 </p>
     <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;在新的学年里，我校将把学生良好习惯的培养作为学校进行德育建设的有力切入点，以 “习惯养成双十条”为主要内容，以习惯的内化与养成为目标，以有利于学生健康成长为目的，从细节抓起，从现在做起，注意点滴积累，切实培养学生良好的习惯。 </p>
+    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;在新的学年里，我校将把学生良好习惯的培养作为学校进行德育建设的有力切入点，以 “习惯养成双十条”为主要内容，以习惯的内化与养成为目标，以有利于学生健康成长为目的，从细节抓起，从现在做起，注意点滴积累，切实培养学生良好的习惯。 </p>
+    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;在新的学年里，我校将把学生良好习惯的培养作为学校进行德育建设的有力切入点，以 “习惯养成双十条”为主要内容，以习惯的内化与养成为目标，以有利于学生健康成长为目的，从细节抓起，从现在做起，注意点滴积累，切实培养学生良好的习惯。 </p>
+    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;在新的学年里，我校将把学生良好习惯的培养作为学校进行德育建设的有力切入点，以 “习惯养成双十条”为主要内容，以习惯的内化与养成为目标，以有利于学生健康成长为目的，从细节抓起，从现在做起，注意点滴积累，切实培养学生良好的习惯。 </p>
 
     <!--此处填写内容  END-->
 
 </div>
-
+<button class="btn-reply">回复信件</button>
+<div class="modal"></div>
+<div class="reply-content">
+    <h1>回复信件 <img src="images/delete.png" alt=""></h1>
+    <p>收件人：李竖琴老师</p>
+    <label>回复内容：
+        <textarea></textarea>
+    </label>
+    <button class="btn-reply-submit">发送信件</button>
+</div>
+<script src="js/jquery-1.10.1.js"></script>
+<script>
+    $('button.btn-reply').on('click',function () {
+        var scroll_height = window.scrollY||window.pageYOffset;
+        $('div.reply-content').css('top',scroll_height+30+'px');
+        $('div.reply-content,div.modal').show();
+    });
+    $('.reply-content h1 img,button.btn-reply-submit').on('click',function () {
+        $('div.reply-content,div.modal').hide();
+    });
+</script>
 </body>
 </html>
