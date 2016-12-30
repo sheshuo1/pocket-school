@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"/>
+    <title>收件箱</title>
+    <style>
+        * {
+            margin: 0 0;
+            padding: 0 0;
+            font-family: 'Microsoft YaHei', sans-serif;
+            outline: none;
+            box-sizing: border-box;
+        }
+
+        a {
+            text-decoration: none;
+            color:inherit;
+        }
+
+        html {
+            font-size: 14px;
+        }
+
+        body {
+            background: #d9f2df url("images/background.jpg") no-repeat;
+            background-size: 100% 100%;
+            min-height: 90vh;
+        }
+        .letter-switch{
+            width:70%;
+            margin:20px auto;
+        }
+        .letter-switch button{
+            width: 50%;
+            border: none;
+            background: #379357;
+            color:white;
+            font-size: 20px;
+            line-height: 2;
+        }
+        .letter-switch button.active{
+            background: #225a35;
+        }
+        .letter-list{
+            margin-bottom: 60px;
+        }
+        .letter-card{
+            border-bottom: 2px solid #379357;
+            overflow: hidden;
+            padding: 10px 0;
+        }
+        .letter-card span{
+            float: left;
+            width: 20%;
+            height: 70px;
+            margin:0 20px;
+        }
+        .letter-card span.letter-new{
+            background: url("images/letter-logo-new.png") no-repeat center;
+            background-size: 100% auto;
+        }
+        .letter-card span.letter-old{
+            background: url("images/letter-logo_05.png") no-repeat center;
+            background-size: 100% auto;
+        }
+        .letter-card h1{
+            margin-top: 1em;
+            margin-bottom: 0.5em;
+            font-size: 16px;
+            font-weight: 500;
+            overflow:hidden;
+            text-overflow:ellipsis;
+            white-space:nowrap;
+        }
+        .letter-card p{
+            font-size: 12px;
+            overflow:hidden;
+            text-overflow:ellipsis;
+            white-space:nowrap;
+        }
+        .letter-list.send{
+            display: none;
+        }
+        a.btn-send-letter{
+            display: block;
+            width: 100%;
+            border: none;
+            position: fixed;
+            bottom: 0;
+            text-align: center;
+            color:white;
+            background: #379357;
+            font-size: 20px;
+            line-height: 2.5;
+        }
+        a.btn-send-letter img{
+            height: 30px;
+            vertical-align: -8px;
+        }
+    </style>
+</head>
+<body>
+<div class="letter-switch">
+    <button class="active" id="btn-received">收到的信</button><button id="btn-send">发出的信</button>
+</div>
+<div class="letter-list received">
+    <a href="letter-content.html"><div class="letter-card">
+        <span class="letter-new"></span>
+        <h1>发件人：李瑞雪</h1>
+        <p>发送时间：11-28 12：30 状态：已发送</p>
+    </div></a>
+    <a href="letter-content.html"><div class="letter-card">
+        <span class="letter-old"></span>
+        <h1>发件人：李瑞雪</h1>
+        <p>发送时间：11-28 12：30 状态：已发送</p>
+    </div></a>
+    <a href="letter-content.html"><div class="letter-card">
+        <span class="letter-new"></span>
+        <h1>发件人：李瑞雪</h1>
+        <p>发送时间：11-28 12：30 状态：已发送</p>
+    </div></a>
+    <a href="letter-content.html"><div class="letter-card">
+        <span class="letter-new"></span>
+        <h1>发件人：李瑞雪</h1>
+        <p>发送时间：11-28 12：30 状态：已发送</p>
+    </div></a>
+    <a href="letter-content.html"><div class="letter-card">
+        <span class="letter-new"></span>
+        <h1>发件人：李瑞雪</h1>
+        <p>发送时间：11-28 12：30 状态：已发送</p>
+    </div></a>
+    <a href="letter-content.html"><div class="letter-card">
+        <span class="letter-new"></span>
+        <h1>发件人：李瑞雪</h1>
+        <p>发送时间：11-28 12：30 状态：已发送</p>
+    </div></a>
+</div>
+<div class="letter-list send">
+    <a href="letter-content.html"><div class="letter-card">
+        <span class="letter-new"></span>
+        <h1>收件人：李瑞雪</h1>
+        <p>发送时间：11-28 12：30 状态：已发送</p>
+    </div></a>
+    <a href="letter-content.html"><div class="letter-card">
+        <span class="letter-old"></span>
+        <h1>收件人：李瑞雪</h1>
+        <p>发送时间：11-28 12：30 状态：已发送</p>
+    </div></a>
+    <a href="letter-content.html"><div class="letter-card">
+        <span class="letter-new"></span>
+        <h1>收件人：李瑞雪</h1>
+        <p>发送时间：11-28 12：30 状态：已发送</p>
+    </div></a>
+    <a href="letter-content.html"><div class="letter-card">
+        <span class="letter-new"></span>
+        <h1>收件人：李瑞雪</h1>
+        <p>发送时间：11-28 12：30 状态：已发送</p>
+    </div></a>
+    <a href="letter-content.html"><div class="letter-card">
+        <span class="letter-new"></span>
+        <h1>收件人：李瑞雪</h1>
+        <p>发送时间：11-28 12：30 状态：已发送</p>
+    </div></a>
+    <a href="letter-content.html"><div class="letter-card">
+        <span class="letter-new"></span>
+        <h1>收件人：李瑞雪</h1>
+        <p>发送时间：11-28 12：30 状态：已发送</p>
+    </div></a>
+</div>
+<a href="send-letter.html" class="btn-send-letter">
+    <img src="images/add.png" alt="img">编辑信件
+</a>
+
+<script src="js/jquery-1.10.1.js"></script>
+<script>
+    $('#btn-received,#btn-send').on('click',function () {
+        $(this).parent().children('button').removeClass('active');
+        $(this).addClass('active');
+        if(this.id=='btn-send'){
+            $('.letter-list.received').hide();
+            $('.letter-list.send').show();
+        }else{
+            $('.letter-list.send').hide();
+            $('.letter-list.received').show();
+        }
+    })
+</script>
+</body>
+</html>

@@ -24,18 +24,19 @@
             background: #d9f2df url("images/background.jpg") no-repeat;
             background-size: 100% 100%;
             min-height: 90vh;
+            padding-bottom: 60px;
         }
 
         .btn-submit{
             font-size: 1.6rem;
-            width: 70px;
-            height: 70px;
-            border-radius: 50%;
-            border: 2px solid greenyellow;
+            width: 50%;
+            height: 50px;
+            border: none;
             color: white;
-            display: block;
-            margin:0 auto;
-            background: #009944;
+            background: #379357;
+        }
+        .btn-submit.caogao{
+            background: #d9534f;
         }
         .classwork{
             overflow: hidden;
@@ -52,7 +53,8 @@
 
         }
         .submit-footer{
-
+            position: fixed;
+            bottom: 0;
             width: 100%;
         }
 
@@ -152,7 +154,7 @@
     <textarea class="text"></textarea>
     <div class="submit-footer">
 
-        <button class="btn-submit">提交</button>
+        <button class="btn-submit caogao">存为草稿</button><button class="btn-submit">提交</button>
 
     </div>
 </div>
