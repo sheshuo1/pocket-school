@@ -38,7 +38,7 @@
             padding:5% 5% 50px 5%;
             line-height: 2;
         }
-        button.btn-reply,button.btn-reply-submit{
+        button.btn-reply-submit{
             display: block;
             width: 100%;
             line-height: 2;
@@ -48,8 +48,22 @@
             background: #379357;
         }
         button.btn-reply{
+            border: none;
             position: fixed;
-            bottom: 0;
+            width: 50px;
+            height: 50px;
+            bottom: 10px;
+            text-align: center;
+            vertical-align: middle;
+            right:10px;
+            color:white;
+            background: #ff7800;
+            border-radius: 50%;
+        }
+        button.btn-reply img{
+            vertical-align: -18px;
+            width: 30px;
+            height: 30px;
         }
         .modal{
             width: 100%;
@@ -99,7 +113,7 @@
     </style>
 </head>
 <body>
-<div class="background"><img class="letter-background" src="images/letter-background_02.png" alt=""></div>
+<!--<div class="background"><img class="letter-background" src="images/letter-background_02.png" alt=""></div>-->
 <div class="main">
     <!--此处填写内容-->
     <p>家长同志： </p>
@@ -113,7 +127,7 @@
     <!--此处填写内容  END-->
 
 </div>
-<button class="btn-reply">回复信件</button>
+<button class="btn-reply"><img src="images/bianji.png" alt="img"></button>
 <div class="modal"></div>
 <div class="reply-content">
     <h1>回复信件 <img src="images/delete.png" alt=""></h1>
