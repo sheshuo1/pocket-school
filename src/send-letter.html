@@ -29,8 +29,8 @@
 
         .btn-submit{
             font-size: 1.4rem;
-            width: 45%;
-            height: 50px;
+            width: 35%;
+            margin:0 5px;
             border: none;
             color: white;
             background: none;
@@ -141,6 +141,26 @@
             display: none;
             z-index: 100;
         }
+        #btn-cancel-img{
+            position: absolute;
+            padding:0;
+            margin:0;
+            top:18px;
+            right:10px;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background: green;
+            border: none;
+        }
+        #btn-cancel-img img{
+            margin:0;
+            padding:0;
+            width: 100%;
+        }
+        button.all-choose{
+            display: none;
+        }
     </style>
 </head>
 <body>
@@ -237,8 +257,9 @@
     <table>
         <thead>
         <tr>
-            <th><button class="cancel">取消</button></th>
-            <th><button class="submit">确定</button></th>
+            <th><button class="all-choose">全　选</button><button class="all-not-choose">全不选</button><button id="btn-cancel-img" class="cancel">
+                <img src="images/delete.png" alt=""></button></th>
+            <th><button class="submit">确　定</button></th>
         </tr>
         </thead>
         <tbody>
@@ -304,7 +325,16 @@
                 $(this).attr('class','checked');
             }
         });
-
+        //点击全不选按钮，取消列表所有项目，点击全选按钮，选中列表所有项目
+        $('.choose-subject-area .all-choose,.choose-subject-area .all-not-choose').on('click',function () {
+            if($(this).attr('class')=='all-choose'){
+                $(this).hide().parent().children('.all-not-choose').css('display','block');
+                $('.choose-subject-area .border').attr('class','checked');
+            }else{
+                $(this).hide().parent().children('.all-choose').css('display','block');
+                $('.choose-subject-area .checked').attr('class','border');
+            }
+        })
     });
 </script>
 </body>
