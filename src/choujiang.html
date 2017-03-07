@@ -319,7 +319,7 @@
             background: red;
         }
         .fix-titile{
-            position: fixed;
+            position: static;
             width: 100%;
             top:0;
             left:0;
@@ -334,10 +334,31 @@
         .show{
             display: block;
         }
+        div.txt-info{
+            background: #f7f0a1;
+            padding:5px 0;
+        }
+        div.txt-info p{
+            background: #379357;
+            margin:5px 5px 0 5px;
+            text-align: center;
+            color:white;
+            border-radius: 5px;
+            white-space: nowrap;
+            overflow: hidden;
+        }
+        div.txt-info p span{
+            position: relative;
+        }
     </style>
 </head>
 <body>
 <p class="fix-titile">该活动苹果公司不是赞助商，并且苹果也不会以任何形式参与。</p>
+<div class="txt-info">
+    <p><span>三年二班   李玉思小朋友  获得了铅笔盒</span></p>
+    <p><span>三年二班   李玉思小朋友  获得了铅笔盒获得了铅笔盒获得了铅笔盒获得了铅笔盒获得了铅笔盒</span></p>
+    <p><span>三年二班   李玉思小朋友  获得了铅笔盒111111</span></p>
+</div>
 <button class="btn choujiangjilu"><b>&nbsp;&nbsp;记&nbsp;&nbsp;&nbsp;录&nbsp;&nbsp;</b></button>
 <button class="btn shuoming"><b>抽奖说明</b></button>
 <div class="xiaofengche"><b>积分剩余：<span class="fengche-number">310</span></b></div>
@@ -573,6 +594,25 @@
             start(jon);
         });
 
+//文本自动滚动
+        var txt_list=$('div.txt-info p span');
+        var p_w=$('div.txt-info p').eq(0).width();
+        for(var i=0;i<txt_list.length;i++){
+            (function (i) {
+                var txt_w=txt_list.eq(i).width();
+                if(txt_w>p_w+20){
+                    setInterval(function () {
+                        if(-1*(parseInt(txt_list.eq(i).css('left')))+p_w-50<txt_w){
+                            txt_list.eq(i).css('left',parseInt(txt_list.eq(i).css('left'))-1+'px');
+                        }
+                        else{
+                            txt_list.eq(i).css('left',50+'px');
+                        }
+                    },50)
+                }
+            })(i)
+
+        }
     });
 
 //alert弹出框
