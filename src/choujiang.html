@@ -603,7 +603,10 @@
                 if(txt_w>p_w+20){
                     setInterval(function () {
                         if(-1*(parseInt(txt_list.eq(i).css('left')))+p_w-50<txt_w){
-                            txt_list.eq(i).css('left',parseInt(txt_list.eq(i).css('left'))-1+'px');
+                            //txt_list.eq(i).css('left',parseInt(txt_list.eq(i).css('left'))-1+'px');
+                            txt_list.eq(i).css('left',function (index, value) {
+                                return parseInt(value)-1+'px';
+                            });
                         }
                         else{
                             txt_list.eq(i).css('left',p_w+'px');
